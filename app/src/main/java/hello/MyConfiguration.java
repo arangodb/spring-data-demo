@@ -1,4 +1,4 @@
-package com.company;
+package hello;
 
 import com.arangodb.ArangoDB;
 import com.arangodb.springframework.annotation.EnableArangoRepositories;
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * Created by user on 10/08/17.
  */
 @Configuration
-@EnableArangoRepositories(basePackages = { "com.company" })
+@EnableArangoRepositories(basePackages = { "hello" })
 public class MyConfiguration extends AbstractArangoConfiguration {
 
     @Override
