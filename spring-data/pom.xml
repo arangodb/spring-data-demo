@@ -154,7 +154,7 @@
 				</executions>
 			</plugin>
 
-			<plugin>
+			<!--plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.9.1</version>
@@ -169,7 +169,7 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin-->
 
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -191,7 +191,7 @@
 				</configuration>
 			</plugin>
 
-			<plugin>
+			<!--plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-gpg-plugin</artifactId>
 				<version>1.5</version>
@@ -204,7 +204,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin-->
 
 		</plugins>
 
