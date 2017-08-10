@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.arangodb.springframework.core.ArangoFactoryBeanTest" time="0.249" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.arangodb.springframework.core.ArangoFactoryBeanTest" time="0.26" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="idea.version" value="2017.1.5"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -61,5 +61,5 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase name="arango" classname="com.arangodb.springframework.core.ArangoFactoryBeanTest" time="0.001"/>
-  <testcase name="db" classname="com.arangodb.springframework.core.ArangoFactoryBeanTest" time="0.001"/>
+  <testcase name="db" classname="com.arangodb.springframework.core.ArangoFactoryBeanTest" time="0"/>
 </testsuite>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="5.393" tests="21" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="5.876" tests="21" errors="0" skipped="0" failures="0">
   <properties>
     <property name="idea.version" value="2017.1.5"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -60,25 +60,25 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="geoResultsTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.291"/>
-  <testcase name="findDistinctOrderTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.279"/>
-  <testcase name="existsAndStringListAllIgnoreCaseTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.237"/>
-  <testcase name="geoPageTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.235"/>
-  <testcase name="findTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.262"/>
-  <testcase name="geoResultTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.258"/>
-  <testcase name="pageableTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.269"/>
-  <testcase name="findOrderTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.265"/>
-  <testcase name="findDistinctTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.184"/>
-  <testcase name="staticAndDynamicSortTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.269"/>
-  <testcase name="findWithinOrNearTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.237"/>
-  <testcase name="findByMultipleLocationsAndMultipleRegularFieldsTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.287"/>
-  <testcase name="findTopDistinctTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.265"/>
-  <testcase name="findNearTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.226"/>
-  <testcase name="countDistinctTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.287"/>
-  <testcase name="removeTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.226"/>
-  <testcase name="findTopOrderTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.28"/>
-  <testcase name="buildPredicateWithDistanceTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.247"/>
-  <testcase name="countTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.262"/>
-  <testcase name="findWithinAndWithinTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.261"/>
-  <testcase name="findWithinTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.252"/>
+  <testcase name="geoResultsTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.289"/>
+  <testcase name="findDistinctOrderTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.322"/>
+  <testcase name="existsAndStringListAllIgnoreCaseTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.256"/>
+  <testcase name="geoPageTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.275"/>
+  <testcase name="findTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.305"/>
+  <testcase name="geoResultTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.272"/>
+  <testcase name="pageableTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.329"/>
+  <testcase name="findOrderTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.248"/>
+  <testcase name="findDistinctTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.27"/>
+  <testcase name="staticAndDynamicSortTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.247"/>
+  <testcase name="findWithinOrNearTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.286"/>
+  <testcase name="findByMultipleLocationsAndMultipleRegularFieldsTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.304"/>
+  <testcase name="findTopDistinctTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.232"/>
+  <testcase name="findNearTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.299"/>
+  <testcase name="countDistinctTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.252"/>
+  <testcase name="removeTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.261"/>
+  <testcase name="findTopOrderTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.302"/>
+  <testcase name="buildPredicateWithDistanceTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.263"/>
+  <testcase name="countTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.252"/>
+  <testcase name="findWithinAndWithinTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.293"/>
+  <testcase name="findWithinTest" classname="com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest" time="0.303"/>
 </testsuite>

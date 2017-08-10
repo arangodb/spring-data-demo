@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="9.388" tests="32" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="8.831" tests="32" errors="0" skipped="0" failures="0">
   <properties>
     <property name="idea.version" value="2017.1.5"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -60,36 +60,36 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="multipleSingleFieldFulltextIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.291"/>
-  <testcase name="singleFieldSkiplistIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.347"/>
-  <testcase name="singleFieldSkiplistIndexed" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.266"/>
-  <testcase name="singleFieldPersistentIndexed" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.324"/>
-  <testcase name="multiFieldGeoIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.218"/>
-  <testcase name="multiFieldPersistentIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.326"/>
-  <testcase name="singleFieldPersistentIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.264"/>
-  <testcase name="singleFieldFulltextIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.327"/>
-  <testcase name="multipleIndexesGeoIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.28"/>
-  <testcase name="multipleIndexesSkiplistIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.271"/>
-  <testcase name="multiFieldSkiplistIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.296"/>
-  <testcase name="multiFieldHashIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.246"/>
-  <testcase name="multipleSingleFieldGeoIndexed" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.33"/>
-  <testcase name="multipleIndexesPersistentIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.247"/>
-  <testcase name="singleFieldGeoIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.298"/>
-  <testcase name="singleFieldHashIndexed" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.246"/>
-  <testcase name="differentIndexedAnnotationsSameField" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.355"/>
-  <testcase name="multipleIndexesFulltextIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.252"/>
-  <testcase name="singleFieldGeoIndexed" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.288"/>
-  <testcase name="multipleSingleFieldFulltextIndexed" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.286"/>
-  <testcase name="multipleSingleFieldHashIndexed" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.286"/>
-  <testcase name="multipleDifferentIndexAnnotations" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.435"/>
-  <testcase name="singleFieldFulltextIndexed" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.283"/>
-  <testcase name="multipleIndexesHashIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.291"/>
-  <testcase name="multipleSingleFieldHashIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.307"/>
-  <testcase name="singleFieldHashIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.263"/>
-  <testcase name="multipleSingleFieldSkiplistIndexed" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.269"/>
-  <testcase name="multipleSingleFieldSkiplistIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.296"/>
-  <testcase name="multipleSingleFieldPersistentIndexed" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.256"/>
-  <testcase name="multipleSingleFieldPersistentIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.314"/>
-  <testcase name="multipleSingleFieldGeoIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.254"/>
-  <testcase name="differentIndexAnnotations" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.354"/>
+  <testcase name="multipleSingleFieldFulltextIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.298"/>
+  <testcase name="singleFieldSkiplistIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.274"/>
+  <testcase name="singleFieldSkiplistIndexed" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.311"/>
+  <testcase name="singleFieldPersistentIndexed" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.253"/>
+  <testcase name="multiFieldGeoIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.277"/>
+  <testcase name="multiFieldPersistentIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.273"/>
+  <testcase name="singleFieldPersistentIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.316"/>
+  <testcase name="singleFieldFulltextIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.339"/>
+  <testcase name="multipleIndexesGeoIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.215"/>
+  <testcase name="multipleIndexesSkiplistIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.334"/>
+  <testcase name="multiFieldSkiplistIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.245"/>
+  <testcase name="multiFieldHashIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.29"/>
+  <testcase name="multipleSingleFieldGeoIndexed" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.271"/>
+  <testcase name="multipleIndexesPersistentIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.278"/>
+  <testcase name="singleFieldGeoIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.327"/>
+  <testcase name="singleFieldHashIndexed" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.19"/>
+  <testcase name="differentIndexedAnnotationsSameField" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.33"/>
+  <testcase name="multipleIndexesFulltextIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.211"/>
+  <testcase name="singleFieldGeoIndexed" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.28"/>
+  <testcase name="multipleSingleFieldFulltextIndexed" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.272"/>
+  <testcase name="multipleSingleFieldHashIndexed" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.273"/>
+  <testcase name="multipleDifferentIndexAnnotations" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.414"/>
+  <testcase name="singleFieldFulltextIndexed" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.282"/>
+  <testcase name="multipleIndexesHashIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.258"/>
+  <testcase name="multipleSingleFieldHashIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.276"/>
+  <testcase name="singleFieldHashIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.247"/>
+  <testcase name="multipleSingleFieldSkiplistIndexed" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.265"/>
+  <testcase name="multipleSingleFieldSkiplistIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.28"/>
+  <testcase name="multipleSingleFieldPersistentIndexed" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.2"/>
+  <testcase name="multipleSingleFieldPersistentIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.258"/>
+  <testcase name="multipleSingleFieldGeoIndex" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.18"/>
+  <testcase name="differentIndexAnnotations" classname="com.arangodb.springframework.core.template.java.ArangoIndexTest" time="0.296"/>
 </testsuite>

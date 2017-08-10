@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="5.227" tests="20" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="5.145" tests="20" errors="0" skipped="0" failures="0">
   <properties>
     <property name="idea.version" value="2017.1.5"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -60,24 +60,24 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="endingWithByExampleNestedTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.224"/>
-  <testcase name="deleteAllTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.282"/>
-  <testcase name="findAllSortTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.245"/>
-  <testcase name="deleteByIdTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.264"/>
-  <testcase name="findOneTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.267"/>
-  <testcase name="findAllPageableByExampleTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.264"/>
-  <testcase name="existsByExampleTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.275"/>
-  <testcase name="findAllTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.246"/>
-  <testcase name="findOneByExampleTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.265"/>
-  <testcase name="findAllPageableTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.273"/>
-  <testcase name="existsTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.216"/>
-  <testcase name="countByExampleTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.284"/>
-  <testcase name="findAllByIterableTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.242"/>
-  <testcase name="endingWithByExampleNestedIncludeNullTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.279"/>
-  <testcase name="deleteByEntityTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.27"/>
-  <testcase name="findAllByExampleTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.242"/>
-  <testcase name="startingWithByExampleTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.285"/>
-  <testcase name="countTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.238"/>
-  <testcase name="deleteByIterableTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.252"/>
-  <testcase name="findAllSortByExampleTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.29"/>
+  <testcase name="endingWithByExampleNestedTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.293"/>
+  <testcase name="deleteAllTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.226"/>
+  <testcase name="findAllSortTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.218"/>
+  <testcase name="deleteByIdTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.251"/>
+  <testcase name="findOneTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.214"/>
+  <testcase name="findAllPageableByExampleTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.269"/>
+  <testcase name="existsByExampleTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.249"/>
+  <testcase name="findAllTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.236"/>
+  <testcase name="findOneByExampleTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.282"/>
+  <testcase name="findAllPageableTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.263"/>
+  <testcase name="existsTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.209"/>
+  <testcase name="countByExampleTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.298"/>
+  <testcase name="findAllByIterableTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.258"/>
+  <testcase name="endingWithByExampleNestedIncludeNullTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.289"/>
+  <testcase name="deleteByEntityTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.247"/>
+  <testcase name="findAllByExampleTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.249"/>
+  <testcase name="startingWithByExampleTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.294"/>
+  <testcase name="countTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.243"/>
+  <testcase name="deleteByIterableTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.254"/>
+  <testcase name="findAllSortByExampleTest" classname="com.arangodb.springframework.core.repository.ArangoRepositoryTest" time="0.268"/>
 </testsuite>

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.arangodb.springframework.core.template.java.ArangoTemplateTest
 -------------------------------------------------------------------------------
-Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.135 sec - in com.arangodb.springframework.core.template.java.ArangoTemplateTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.921 sec - in com.arangodb.springframework.core.template.java.ArangoTemplateTest

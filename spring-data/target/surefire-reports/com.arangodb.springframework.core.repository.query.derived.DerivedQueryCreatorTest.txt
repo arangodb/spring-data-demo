@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest
 -------------------------------------------------------------------------------
-Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.393 sec - in com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.876 sec - in com.arangodb.springframework.core.repository.query.derived.DerivedQueryCreatorTest

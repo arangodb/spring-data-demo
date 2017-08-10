@@ -38,6 +38,7 @@ com/arangodb/springframework/core/convert/resolver/AbstractResolver$ProxyInterce
 com/arangodb/springframework/core/repository/ArangoExampleConverter$1.class
 com/arangodb/springframework/core/repository/query/ArangoParameterAccessor.class
 com/arangodb/springframework/core/config/parser/ArangoMappingConverterParser.class
+com/arangodb/springframework/core/repository/cdi/ArangoRepositoryExtension.class
 com/arangodb/springframework/core/convert/ArangoCustomConversions.class
 com/arangodb/springframework/core/template/ArangoExtCursorIterator.class
 com/arangodb/springframework/annotation/Edge.class
@@ -89,6 +90,7 @@ com/arangodb/springframework/core/config/AbstractArangoConfiguration.class
 com/arangodb/springframework/core/convert/CustomConversions$1.class
 com/arangodb/springframework/annotation/SkiplistIndexes.class
 com/arangodb/springframework/core/convert/resolver/ResolverFactory.class
+com/arangodb/springframework/core/repository/cdi/ArangoRepositoryBean.class
 com/arangodb/springframework/ArangoUncategorizedException.class
 com/arangodb/springframework/core/config/parser/ArangoDatabaseParser.class
 com/arangodb/springframework/core/repository/query/ArangoQueryLookupStrategy.class
