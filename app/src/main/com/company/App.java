@@ -15,11 +15,12 @@ public class App {
 
     public void run() {
         User user = new User("Jon", "Snow");
-        userRepository.save(user);
+        //userRepository.save(user);
     }
 
     public static void main(String[] args) {
+        System.out.println("Hello, World!");
         App app = new App();
-        app.run();
+        //app.run();
     }
 }
