@@ -35,6 +35,7 @@ public class SimpleArangoRepository<T> implements ArangoRepository<T> {
 	}
 
 	@Override public <S extends T> S save(S entity) {
+		System.err.println("+++++++++++++++++++++");
 		try { arangoOperations.insertDocument(entity); }
 		catch (Exception e) {
 			DBEntity dbEntity = new DBDocumentEntity();

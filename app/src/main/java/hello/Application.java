@@ -42,7 +42,7 @@ public class Application implements CommandLineRunner {
 		System.out.println("Customers found with findByLastName('Smith'):");
 		System.out.println("--------------------------------");
 		for (Customer customer : repository.findByLastName("Smith")) {
-			System.out.println(customer);
+			System.out.println(customer + ", id: " + customer.getId());
 		}
 	}
 
