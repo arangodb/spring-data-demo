@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * Created by user on 10/08/17.
  */
 @Configuration
-@EnableArangoRepositories(basePackages = { "hello" })
+@EnableArangoRepositories(basePackages = { "com.company" })
 public class MyConfiguration extends AbstractArangoConfiguration {
 
     @Override
