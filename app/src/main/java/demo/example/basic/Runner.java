@@ -1,5 +1,6 @@
 package demo.example.basic;
 
+import demo.AbstractRunner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,15 +11,13 @@ import org.springframework.data.geo.Point;
 import java.io.PrintStream;
 
 @ComponentScan("demo")
-public class Runner implements CommandLineRunner {
+public class Runner extends AbstractRunner implements CommandLineRunner {
 
     @Autowired
     private CustomerRepository repository;
 
     @Override
     public void run(String... args) throws Exception {
-
-        PrintStream printStream = System.err;
 
         repository.deleteAll();
 
@@ -30,26 +29,26 @@ public class Runner implements CommandLineRunner {
         withLocationSet.setLocation(new double[] {10, 5});
         repository.save(withLocationSet);
 
-        printStream.println(repository.findByLocationWithin(
+        PRINT_STREAM.println(repository.findByLocationWithin(
                 new Point(10, 6), new Distance(200, Metrics.KILOMETERS)));
 
         // fetch all customers
-        printStream.println("Customers found with findAll():");
-        printStream.println("-------------------------------");
+        PRINT_STREAM.println("Customers found with findAll():");
+        PRINT_STREAM.println("-------------------------------");
         for (Customer customer : repository.findAll()) {
-            printStream.println(customer);
+            PRINT_STREAM.println(customer);
         }
-        printStream.println();
+        PRINT_STREAM.println();
 
         // fetch an individual customer
-        printStream.println("Customer found with findByFirstName('Alice'):");
-        printStream.println("--------------------------------");
-        printStream.println(repository.findByFirstNameAndLastName("Alice", "Smith"));
+        PRINT_STREAM.println("Customer found with findByFirstName('Alice'):");
+        PRINT_STREAM.println("--------------------------------");
+        PRINT_STREAM.println(repository.findByFirstNameAndLastName("Alice", "Smith"));
 
-        printStream.println("Customers found with findByLastName('Smith'):");
-        printStream.println("--------------------------------");
+        PRINT_STREAM.println("Customers found with findByLastName('Smith'):");
+        PRINT_STREAM.println("--------------------------------");
         for (Customer customer : repository.findByLastName("Smith")) {
-            printStream.println(customer + ", id: " + customer.getId());
+            PRINT_STREAM.println(customer + ", id: " + customer.getId());
         }
     }
 }
