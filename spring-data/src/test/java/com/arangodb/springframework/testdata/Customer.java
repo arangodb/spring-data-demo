@@ -44,6 +44,7 @@ public class Customer {
 	private Address address;
 
 	private boolean alive;
+	@GeoIndexed
 	private int[] location = new int[2];
 	private Iterable<Integer> integerList;
 	private String[] stringArray;
