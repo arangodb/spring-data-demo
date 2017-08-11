@@ -3,6 +3,9 @@ package demo.example.basic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.geo.Distance;
+import org.springframework.data.geo.Metrics;
+import org.springframework.data.geo.Point;
 
 import java.io.PrintStream;
 
@@ -23,6 +26,12 @@ public class Runner implements CommandLineRunner {
 
         repository.save(new Customer("Alice", "Smith"));
         repository.save(new Customer("Bob", "Smith"));
+        Customer withLocationSet = new Customer("Bruce", "Wayne");
+        withLocationSet.setLocation(new double[] {10, 5});
+        repository.save(withLocationSet);
+
+        printStream.println(repository.findByLocationWithin(
+                new Point(10, 6), new Distance(200, Metrics.KILOMETERS)));
 
         // fetch all customers
         printStream.println("Customers found with findAll():");
