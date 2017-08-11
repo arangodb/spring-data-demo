@@ -1,4 +1,4 @@
-package hello;
+package com.company;
 
 import java.util.List;
 

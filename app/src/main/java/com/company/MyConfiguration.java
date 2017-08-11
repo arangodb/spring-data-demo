@@ -1,4 +1,4 @@
-package hello;
+package com.company;
 
 import com.arangodb.ArangoDB;
 import com.arangodb.springframework.annotation.EnableArangoRepositories;
