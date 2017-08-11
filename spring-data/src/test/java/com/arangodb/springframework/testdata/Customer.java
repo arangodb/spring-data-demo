@@ -56,9 +56,7 @@ public class Customer {
 	@Relations(edge = Owns.class)
 	private Collection<Product> owns;
 
-	public Customer() {
-		super();
-	}
+	public Customer() { super(); }
 
 	public Customer(final String name, final String surname, final int age) {
 		super();

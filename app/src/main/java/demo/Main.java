@@ -17,8 +17,6 @@ public class Main {
 	}
 
 	static {
-		EXAMPLES.put("basic", demo.example.basic.Runner.class);
-
 		EXAMPLES.put("aql", demo.example.aql.Runner.class);
 		EXAMPLES.put("by-example", demo.example.byexample.Runner.class);
 		EXAMPLES.put("case-sensitivity", demo.example.casesensitivity.Runner.class);

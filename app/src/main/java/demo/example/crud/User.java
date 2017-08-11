@@ -21,14 +21,17 @@ public class User {
     private String username;
 
     @Field("lvl")
-    private int level;
+    private long level;
 
-    public User(String username) { this.username = username; }
+    public User(String username, long level) {
+        this.username = username;
+        this.level = level;
+    }
 
     public String getId() { return id; }
 
     @Override
     public String toString() {
-        return String.format("User: {id: '%s', key: '%s', rev: '%s', username: '%s'}", id, key, rev, username);
+        return String.format("User: {id: '%s', key: '%s', rev: '%s', username: '%s', level: '%d'}", id, key, rev, username, level);
     }
 }
