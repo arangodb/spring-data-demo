@@ -1,10 +1,8 @@
 package com.arangodb.springframework.core.repository.cdi;
 
 import com.arangodb.springframework.core.ArangoOperations;
-import com.arangodb.springframework.core.repository.ArangoRepository;
 import org.springframework.data.repository.cdi.CdiRepositoryBean;
 import org.springframework.data.repository.cdi.CdiRepositoryExtensionSupport;
-import org.springframework.data.repository.config.CustomRepositoryImplementationDetector;
 
 import javax.enterprise.event.Observes;
 import javax.enterprise.inject.UnsatisfiedResolutionException;
