@@ -63,6 +63,9 @@ public interface CustomerRepository extends ArangoRepository<Customer>{
 	@Query("FOR c IN @collection FILTER c._id == @1 RETURN c")
 	Customer findOneByIdInNamedCollectionAqlRejected(@Param("collection") String collection, String id);
 
+	@Query("FOR c in customer FILTER c.surname == @0 RETURN c")
+	List<Customer> findManyBySurname(String surname);
+
 	Set<Customer> findDistinctByNameAfter(String name);
 
 	List<Customer> findByNameNotIgnoreCaseAndAgeLessThanIgnoreCaseOrderByNameDesc(String name, int age);
