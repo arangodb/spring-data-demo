@@ -1,7 +1,6 @@
 package demo.example.pageandsort;
 
 import demo.AbstractRunner;
-import demo.example.crud.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.domain.Sort;

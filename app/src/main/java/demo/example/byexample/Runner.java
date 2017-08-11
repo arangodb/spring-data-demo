@@ -2,17 +2,15 @@ package demo.example.byexample;
 
 import demo.AbstractRunner;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.LinkedList;
 
 @ComponentScan("demo")
-public class Runner extends AbstractRunner implements CommandLineRunner {
+public class Runner extends AbstractRunner {
 
     @Autowired
     private PersonRepository repository;
