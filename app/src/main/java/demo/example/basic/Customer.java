@@ -1,4 +1,4 @@
-package com.company;
+package demo.example.basic;
 
 import com.arangodb.springframework.annotation.Document;
 import com.arangodb.springframework.annotation.Field;
