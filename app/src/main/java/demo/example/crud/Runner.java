@@ -42,7 +42,7 @@ public class Runner extends AbstractRunner {
 
         PRINT_STREAM.println("All 3 users after saving (notice that 'admin' id did not change and new user was not created):");
         PRINT_STREAM.println(BREAK);
-        for (User u : users) { PRINT_STREAM.println(u); }
+        PRINT_STREAM.println(users);
         PRINT_STREAM.println();
 
         PRINT_STREAM.println("findOne(String id) - expecting 'admin' user:");

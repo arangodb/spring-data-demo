@@ -12,14 +12,13 @@ public class Main {
 	private static final Map<String, Class<?>> EXAMPLES = new HashMap<>();
 
 	public static void main(String[] args) {
-		SpringApplication.run(EXAMPLES.get("by-example"), args);
-		System.exit(1);
+		SpringApplication.run(EXAMPLES.get("geospatial"), args);
+		System.exit(-1);
 	}
 
 	static {
 		EXAMPLES.put("aql", demo.example.aql.Runner.class);
 		EXAMPLES.put("by-example", demo.example.byexample.Runner.class);
-		EXAMPLES.put("case-sensitivity", demo.example.casesensitivity.Runner.class);
 		EXAMPLES.put("configuration", demo.example.configuration.Runner.class);
 		EXAMPLES.put("crud", demo.example.crud.Runner.class);
 		EXAMPLES.put("derived", demo.example.derived.Runner.class);
