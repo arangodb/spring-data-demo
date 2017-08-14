@@ -12,7 +12,7 @@ public class Main {
 	private static final Map<String, Class<?>> EXAMPLES = new HashMap<>();
 
 	public static void main(String[] args) {
-		SpringApplication.run(EXAMPLES.get("by-example"), args);
+		SpringApplication.run(EXAMPLES.get("derived"), args);
 		System.exit(1);
 	}
 

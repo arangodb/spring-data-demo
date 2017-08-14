@@ -2,11 +2,7 @@ package demo.example.byexample;
 
 import com.arangodb.springframework.annotation.Document;
 import com.arangodb.springframework.annotation.Field;
-import org.springframework.data.annotation.Id;
 
-/**
- * Created by markmccormick on 11/08/2017.
- */
 @Document("people")
 public class Person {
 
