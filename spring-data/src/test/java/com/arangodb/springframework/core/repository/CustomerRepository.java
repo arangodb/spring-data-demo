@@ -24,7 +24,7 @@ public interface CustomerRepository extends ArangoRepository<Customer>{
 	Map<String, Object> findOneByIdAqlWithNamedParameter(@Param("id") String idString, AqlQueryOptions options);
 
 	@Query("FOR c IN customer FILTER c.name == @1 AND c._id == @0 RETURN c")
-	BaseDogcument findOneByIdAndNameAql(String id, String name);
+	BaseDocument findOneByIdAndNameAql(String id, String name);
 
 	@Query("FOR c IN customer FILTER c._id == @0 RETURN c")
 	Optional<Customer> findOneByIdAqlPotentialNameClash(@Param("0") String id);
@@ -90,7 +90,9 @@ public interface CustomerRepository extends ArangoRepository<Customer>{
 
 	List<Customer> findByLocationWithinAndName(Point location, Range<Double> distanceRange, String name);
 
-	Iterable<Customer> findByLocationWithinOrNameAndLocationNear(Point location, Distance distance, String name, Point location2);
+	Iterable<Customer> findByLocationWithinOrNameAndLocationNear(Circle circle, String name, Point location2);
+
+	List<Customer> findByLocationWithin(Box box);
 
 	Collection<Customer> findByLocationWithinAndLocationWithinOrName(Point location, int distance, Point location2, Range distanceRange, String name);
 

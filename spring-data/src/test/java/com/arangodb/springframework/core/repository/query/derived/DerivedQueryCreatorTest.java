@@ -216,7 +216,43 @@ public class DerivedQueryCreatorTest extends AbstractArangoRepositoryTest {
         repository.save(customer3);
         double distanceInMeters = convertAngleToDistance(30);
         Distance distance = new Distance(distanceInMeters / 1000, Metrics.KILOMETERS);
-        Iterable<Customer> retrieved = repository.findByLocationWithinOrNameAndLocationNear(new Point(0, 20), distance, "+++", new Point(0, 0));
+        Circle circle = new Circle(new Point(0, 20), distance);
+        Iterable<Customer> retrieved = repository.findByLocationWithinOrNameAndLocationNear(circle, "+++", new Point(0, 0));
+        assertTrue(equals(toBeRetrieved, retrieved, cmp, eq, false));
+    }
+
+    @Test
+    public void findByLocationWithinBoxTest() {
+        List<Customer> toBeRetrieved = new LinkedList<>();
+        Customer customer1 = new Customer("", "", 0);
+        customer1.setLocation(new int[] {10, 10});
+        toBeRetrieved.add(customer1);
+        repository.save(toBeRetrieved);
+        Customer customer2 = new Customer("", "", 0);
+        customer2.setLocation(new int[] {0, 0});
+        repository.save(customer2);
+        Customer customer3 = new Customer("", "", 0);
+        customer3.setLocation(new int[] {0, 10});
+        repository.save(customer3);
+        Customer customer4 = new Customer("", "", 0);
+        customer4.setLocation(new int[] {0, 20});
+        repository.save(customer4);
+        Customer customer5 = new Customer("", "", 0);
+        customer5.setLocation(new int[] {10, 0});
+        repository.save(customer5);
+        Customer customer6 = new Customer("", "", 0);
+        customer6.setLocation(new int[] {10, 20});
+        repository.save(customer6);
+        Customer customer7 = new Customer("", "", 0);
+        customer7.setLocation(new int[] {20, 0});
+        repository.save(customer7);
+        Customer customer8 = new Customer("", "", 0);
+        customer8.setLocation(new int[] {20, 10});
+        repository.save(customer8);
+        Customer customer9 = new Customer("", "", 0);
+        customer9.setLocation(new int[] {20, 20});
+        repository.save(customer9);
+        List<Customer> retrieved = repository.findByLocationWithin(new Box(new Point(5 , 5), new Point(15, 15)));
         assertTrue(equals(toBeRetrieved, retrieved, cmp, eq, false));
     }
 
