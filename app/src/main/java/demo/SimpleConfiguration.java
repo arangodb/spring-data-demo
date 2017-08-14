@@ -13,7 +13,9 @@ import org.springframework.context.annotation.Configuration;
 public class SimpleConfiguration extends AbstractArangoConfiguration {
 
     @Override
-    public ArangoDB.Builder arango() { return new ArangoDB.Builder(); }
+    public ArangoDB.Builder arango() {
+        return new ArangoDB.Builder()/*.host(String).user(String).port(int)... - could be added to override defaults*/;
+    }
 
     @Override
     public String database() { return "spring-test-db"; }

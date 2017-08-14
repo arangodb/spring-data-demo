@@ -1,11 +1,9 @@
 package demo.example.crud;
 
-import com.arangodb.springframework.annotation.Document;
-import com.arangodb.springframework.annotation.Field;
-import com.arangodb.springframework.annotation.Key;
-import com.arangodb.springframework.annotation.Rev;
+import com.arangodb.springframework.annotation.*;
 import org.springframework.data.annotation.Id;
 
+@HashIndex(fields = {"username", "lvl"})
 @Document("users")
 public class User {
 
