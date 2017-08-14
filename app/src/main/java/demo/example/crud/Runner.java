@@ -45,25 +45,25 @@ public class Runner extends AbstractRunner {
         PRINT_STREAM.println(users);
         PRINT_STREAM.println();
 
-        PRINT_STREAM.println("findOne(String id) - expecting 'admin' user:");
+        PRINT_STREAM.println("findOne(\"" + admin.getId() + "\") - expecting 'admin' user:");
         PRINT_STREAM.println(BREAK);
         User present = repository.findOne(admin.getId());
         PRINT_STREAM.println(present);
         PRINT_STREAM.println();
 
-        PRINT_STREAM.println("exists(String id) - expecting 'true' for 'admin':");
+        PRINT_STREAM.println("exists(\"" + admin.getId() + "\") - expecting 'true' for 'admin':");
         PRINT_STREAM.println(BREAK);
         boolean exists = repository.exists(admin.getId());
         PRINT_STREAM.println(exists);
         PRINT_STREAM.println();
 
-        PRINT_STREAM.println("findOne(String id) - expecting 'null' because no user with id '-' exists:");
+        PRINT_STREAM.println("findOne(\"-\") - expecting 'null':");
         PRINT_STREAM.println(BREAK);
         User absent = repository.findOne("-");
         PRINT_STREAM.println(absent);
         PRINT_STREAM.println();
 
-        PRINT_STREAM.println("exists(String id) - expecting 'false' for id='-':");
+        PRINT_STREAM.println("exists(\"-\") - expecting 'false':");
         PRINT_STREAM.println(BREAK);
         exists = repository.exists("-");
         PRINT_STREAM.println(exists);
@@ -78,7 +78,7 @@ public class Runner extends AbstractRunner {
         ids.add(root.getId());
         ids.add(user.getId());
 
-        PRINT_STREAM.println("findAll(Iterable<String> ids) - expecting 'root' and 'user':");
+        PRINT_STREAM.println("findAll([\"" + root.getId() + "\", \"" + user.getId() + "\"]) - expecting 'root' and 'user':");
         PRINT_STREAM.println(BREAK);
         PRINT_STREAM.println(repository.findAll(ids));
         PRINT_STREAM.println();
@@ -89,11 +89,11 @@ public class Runner extends AbstractRunner {
         PRINT_STREAM.println(count);
         PRINT_STREAM.println();
 
-        PRINT_STREAM.println("delete(User user) - deleting 'admin' (delete(String id) is supported as well):");
+        PRINT_STREAM.println("delete(admin) - delete(String id) is supported as well:");
         PRINT_STREAM.println(BREAK);
         repository.delete(admin);
 
-        PRINT_STREAM.println("deleteAll(Iterable<User> users) - deleting ['user']:");
+        PRINT_STREAM.println("deleteAll([user]):");
         PRINT_STREAM.println(BREAK);
         repository.delete(Arrays.asList(new User[] {user}));
 
