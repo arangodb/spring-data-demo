@@ -42,7 +42,7 @@ public class Runner extends AbstractRunner {
 
         Point reading = new Point(-0.973056, 51.454167);
 
-        PRINT_STREAM.println("findByPopulationGreaterThanEqualAndLocationWithin(1 000 000, Reading, 5000 KM) - expecting London:");
+        PRINT_STREAM.println("findByPopulationGreaterThanEqualAndLocationWithin(1 000 000, Reading, 60 KM) - expecting London:");
         PRINT_STREAM.println(BREAK);
         PRINT_STREAM.println(repository.findByPopulationGreaterThanEqualAndLocationWithin(
                 1000000, reading, new Distance(60, Metrics.KILOMETERS)));
