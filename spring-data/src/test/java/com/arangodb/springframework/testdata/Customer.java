@@ -21,6 +21,7 @@
 package com.arangodb.springframework.testdata;
 
 import java.util.Collection;
+import java.util.List;
 
 import com.arangodb.springframework.annotation.*;
 import org.springframework.data.annotation.Id;
@@ -45,7 +46,7 @@ public class Customer {
 
 	private boolean alive;
 	@GeoIndexed
-	private int[] location = new int[2];
+	private int[] location;
 	private Iterable<Integer> integerList;
 	private String[] stringArray;
 	private Iterable<String> stringList;

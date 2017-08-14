@@ -24,7 +24,7 @@ public interface CustomerRepository extends ArangoRepository<Customer>{
 	Map<String, Object> findOneByIdAqlWithNamedParameter(@Param("id") String idString, AqlQueryOptions options);
 
 	@Query("FOR c IN customer FILTER c.name == @1 AND c._id == @0 RETURN c")
-	BaseDocument findOneByIdAndNameAql(String id, String name);
+	BaseDogcument findOneByIdAndNameAql(String id, String name);
 
 	@Query("FOR c IN customer FILTER c._id == @0 RETURN c")
 	Optional<Customer> findOneByIdAqlPotentialNameClash(@Param("0") String id);

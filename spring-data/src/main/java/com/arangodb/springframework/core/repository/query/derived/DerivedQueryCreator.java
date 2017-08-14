@@ -68,7 +68,7 @@ public class DerivedQueryCreator extends AbstractQueryCreator<String, Conjunctio
 
     public double[] getUniquePoint() {
         if (uniquePoint == null) return new double[2];
-        return new double[] {uniquePoint.getX(), uniquePoint.getY()};
+        return new double[] {uniquePoint.getY(), uniquePoint.getX()};
     }
 
     @Override
@@ -179,8 +179,8 @@ public class DerivedQueryCreator extends AbstractQueryCreator<String, Conjunctio
                     Assert.isTrue(uniquePoint == null || uniquePoint.equals(point), "Different Points are used - Distance is ambiguous");
                     uniquePoint = point;
                 }
-                bindVars.put(Integer.toString(bindingCounter + bindings++), point.getX());
                 bindVars.put(Integer.toString(bindingCounter + bindings++), point.getY());
+                bindVars.put(Integer.toString(bindingCounter + bindings++), point.getX());
             } else if (caseAdjusted.getClass() == Distance.class) {
                 Distance distance = (Distance) caseAdjusted;
                 bindVars.put(Integer.toString(bindingCounter + bindings++), distance.getNormalizedValue() * Metrics.KILOMETERS.getMultiplier() * 1000);
