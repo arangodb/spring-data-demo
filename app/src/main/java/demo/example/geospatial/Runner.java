@@ -23,7 +23,7 @@ public class Runner extends AbstractRunner {
     public void run(String... args) throws Exception {
 
         repository.deleteAll();
-        PRINT_STREAM.println("deleteAll() - cleared 'cities' collection");
+        LOGGER.warn("deleteAll() - cleared 'cities' collection");
         PRINT_STREAM.println(BREAK);
 
         Collection<City> cities = Arrays.asList(new City[] {
