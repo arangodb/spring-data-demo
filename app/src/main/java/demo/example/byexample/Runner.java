@@ -19,8 +19,8 @@ public class Runner extends AbstractRunner {
     public void run(String... strings) throws Exception {
 
         repository.deleteAll();
-        PRINT_STREAM.println("Cleared 'people' collection");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("Cleared 'people' collection");
+        LOGGER.log(BREAK);
 
         Person jon = new Person("Jon", "Snow", 25);
         Person bran = new Person("Bran", "Stark", 17);
@@ -34,17 +34,17 @@ public class Runner extends AbstractRunner {
 
         repository.save(people);
 
-        PRINT_STREAM.println("Add to people collection: ");
-        PRINT_STREAM.println(BREAK);
-        for (Person p: people) { PRINT_STREAM.println(p); }
-        PRINT_STREAM.println();
+        LOGGER.log("Add to people collection: ");
+        LOGGER.log(BREAK);
+        for (Person p: people) { LOGGER.log(p); }
+        LOGGER.log();
 
         Example jonExample = Example.of(jon);
-        PRINT_STREAM.println("Find by Jon Snow example");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("Find by Jon Snow example");
+        LOGGER.log(BREAK);
         Person retrieved = repository.findOne(jonExample);
-        PRINT_STREAM.println(retrieved);
-        PRINT_STREAM.println();
+        LOGGER.log(retrieved);
+        LOGGER.log();
 
         Example starkExample = Example.of(new Person(null, "stark", 0),
                         ExampleMatcher.matchingAny()
@@ -52,11 +52,11 @@ public class Runner extends AbstractRunner {
                         .withIgnoreCase("surname")
                         .withIgnoreNullValues()
         );
-        PRINT_STREAM.println("Find by surname 'stark' example with case insensitivity, ignoring null values");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("Find by surname 'stark' example with case insensitivity, ignoring null values");
+        LOGGER.log(BREAK);
         Iterable<Person> starkList = repository.findAll(starkExample);
-        for (Person p: starkList) { PRINT_STREAM.println(p); }
-        PRINT_STREAM.println();
+        for (Person p: starkList) { LOGGER.log(p); }
+        LOGGER.log();
 
         Example ageTransformExample = Example.of(new Person("Bran", "ark", 17),
                         ExampleMatcher.matchingAll()
@@ -64,9 +64,9 @@ public class Runner extends AbstractRunner {
                                 .withTransformer("age", age -> ((long) age) + 4)
                                 .withIgnorePaths("name")
         );
-        PRINT_STREAM.println("Find by surname ending 'ark', with age 17 transformed +4, ignoring first name");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("Find by surname ending 'ark', with age 17 transformed +4, ignoring first name");
+        LOGGER.log(BREAK);
         starkList = repository.findAll(ageTransformExample);
-        for (Person p: starkList) { PRINT_STREAM.println(p); }
+        for (Person p: starkList) { LOGGER.log(p); }
     }
 }

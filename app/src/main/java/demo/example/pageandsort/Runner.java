@@ -21,8 +21,8 @@ public class Runner extends AbstractRunner {
     public void run(String... args) throws Exception {
 
         repository.deleteAll();
-        PRINT_STREAM.println("deleteAll() - cleared 'product' collection");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("deleteAll() - cleared 'product' collection");
+        LOGGER.log(BREAK);
 
         Collection<Product> products = new LinkedList<>();
         products.add(new Product("phone", 300));
@@ -32,28 +32,28 @@ public class Runner extends AbstractRunner {
         products.add(new Product("charger", 20));
 
         repository.save(products);
-        PRINT_STREAM.println("All 5 products:");
-        PRINT_STREAM.println(BREAK);
-        PRINT_STREAM.println(products);
-        PRINT_STREAM.println();
+        LOGGER.log("All 5 products:");
+        LOGGER.log(BREAK);
+        LOGGER.log(products);
+        LOGGER.log();
 
         Sort sort = new Sort(Arrays.asList(new Sort.Order[] {
                 new Sort.Order(Sort.Direction.DESC, "price"),
                 new Sort.Order(Sort.Direction.ASC, "name")
         }));
 
-        PRINT_STREAM.println("findAll(Sort sort) - expecting products sorted by price (desc) and name (asc):");
-        PRINT_STREAM.println(BREAK);
-        PRINT_STREAM.println(repository.findAll(sort));
-        PRINT_STREAM.println();
+        LOGGER.log("findAll(Sort sort) - expecting products sorted by price (desc) and name (asc):");
+        LOGGER.log(BREAK);
+        LOGGER.log(repository.findAll(sort));
+        LOGGER.log();
 
-        PRINT_STREAM.println("findAll(Pageable pageable) - expecting 'earphones' and 'headphones':");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("findAll(Pageable pageable) - expecting 'earphones' and 'headphones':");
+        LOGGER.log(BREAK);
         Page page = repository.findAll(new PageRequest(1, 2, sort));
-        PRINT_STREAM.println(page);
-        PRINT_STREAM.println(page.getContent());
-        PRINT_STREAM.println("Total elements: " + page.getTotalElements());
-        PRINT_STREAM.println("Total pages: " + page.getTotalPages());
-        PRINT_STREAM.println();
+        LOGGER.log(page);
+        LOGGER.log(page.getContent());
+        LOGGER.log("Total elements: " + page.getTotalElements());
+        LOGGER.log("Total pages: " + page.getTotalPages());
+        LOGGER.log();
     }
 }

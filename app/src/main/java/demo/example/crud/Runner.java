@@ -18,8 +18,8 @@ public class Runner extends AbstractRunner {
     public void run(String... args) throws Exception {
 
         repository.deleteAll();
-        PRINT_STREAM.println("deleteAll() - cleared 'users' collection");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("deleteAll() - cleared 'users' collection");
+        LOGGER.log(BREAK);
 
         User admin = new User("admin", 1);
         User root = new User("root", 0);
@@ -27,76 +27,76 @@ public class Runner extends AbstractRunner {
 
         Collection<User> users = Arrays.asList(new User[] {admin, root, user});
 
-        PRINT_STREAM.println("Initial users:");
-        PRINT_STREAM.println(BREAK);
-        PRINT_STREAM.println(users);
-        PRINT_STREAM.println();
+        LOGGER.log("Initial users:");
+        LOGGER.log(BREAK);
+        LOGGER.log(users);
+        LOGGER.log();
 
         repository.save(admin);
-        PRINT_STREAM.println("User 'admin' after saving:");
-        PRINT_STREAM.println(BREAK);
-        PRINT_STREAM.println(admin);
-        PRINT_STREAM.println();
+        LOGGER.log("User 'admin' after saving:");
+        LOGGER.log(BREAK);
+        LOGGER.log(admin);
+        LOGGER.log();
 
         repository.save(users);
 
-        PRINT_STREAM.println("All 3 users after saving (notice that 'admin' id did not change and new user was not created):");
-        PRINT_STREAM.println(BREAK);
-        PRINT_STREAM.println(users);
-        PRINT_STREAM.println();
+        LOGGER.log("All 3 users after saving (notice that 'admin' id did not change and new user was not created):");
+        LOGGER.log(BREAK);
+        LOGGER.log(users);
+        LOGGER.log();
 
-        PRINT_STREAM.println("findOne(\"" + admin.getId() + "\") - expecting 'admin' user:");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("findOne(\"" + admin.getId() + "\") - expecting 'admin' user:");
+        LOGGER.log(BREAK);
         User present = repository.findOne(admin.getId());
-        PRINT_STREAM.println(present);
-        PRINT_STREAM.println();
+        LOGGER.log(present);
+        LOGGER.log();
 
-        PRINT_STREAM.println("exists(\"" + admin.getId() + "\") - expecting 'true' for 'admin':");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("exists(\"" + admin.getId() + "\") - expecting 'true' for 'admin':");
+        LOGGER.log(BREAK);
         boolean exists = repository.exists(admin.getId());
-        PRINT_STREAM.println(exists);
-        PRINT_STREAM.println();
+        LOGGER.log(exists);
+        LOGGER.log();
 
-        PRINT_STREAM.println("findOne(\"-\") - expecting 'null':");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("findOne(\"-\") - expecting 'null':");
+        LOGGER.log(BREAK);
         User absent = repository.findOne("-");
-        PRINT_STREAM.println(absent);
-        PRINT_STREAM.println();
+        LOGGER.log(absent);
+        LOGGER.log();
 
-        PRINT_STREAM.println("exists(\"-\") - expecting 'false':");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("exists(\"-\") - expecting 'false':");
+        LOGGER.log(BREAK);
         exists = repository.exists("-");
-        PRINT_STREAM.println(exists);
-        PRINT_STREAM.println();
+        LOGGER.log(exists);
+        LOGGER.log();
 
-        PRINT_STREAM.println("findAll() - expecting all 3 users:");
-        PRINT_STREAM.println(BREAK);
-        PRINT_STREAM.println(repository.findAll());
-        PRINT_STREAM.println();
+        LOGGER.log("findAll() - expecting all 3 users:");
+        LOGGER.log(BREAK);
+        LOGGER.log(repository.findAll());
+        LOGGER.log();
 
         Collection<String> ids = new LinkedList<>();
         ids.add(root.getId());
         ids.add(user.getId());
 
-        PRINT_STREAM.println("findAll([\"" + root.getId() + "\", \"" + user.getId() + "\"]) - expecting 'root' and 'user':");
-        PRINT_STREAM.println(BREAK);
-        PRINT_STREAM.println(repository.findAll(ids));
-        PRINT_STREAM.println();
+        LOGGER.log("findAll([\"" + root.getId() + "\", \"" + user.getId() + "\"]) - expecting 'root' and 'user':");
+        LOGGER.log(BREAK);
+        LOGGER.log(repository.findAll(ids));
+        LOGGER.log();
 
-        PRINT_STREAM.println("count() - expecting 3:");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("count() - expecting 3:");
+        LOGGER.log(BREAK);
         long count = repository.count();
-        PRINT_STREAM.println(count);
-        PRINT_STREAM.println();
+        LOGGER.log(count);
+        LOGGER.log();
 
-        PRINT_STREAM.println("delete(admin) - delete(String id) is supported as well:");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("delete(admin) - delete(String id) is supported as well:");
+        LOGGER.log(BREAK);
         repository.delete(admin);
 
-        PRINT_STREAM.println("deleteAll([user]):");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("deleteAll([user]):");
+        LOGGER.log(BREAK);
         repository.delete(Arrays.asList(new User[] {user}));
 
-        PRINT_STREAM.println("check the database - only 'root' is left in 'users' collection with renamed attribute 'lvl'");
+        LOGGER.log("check the database - only 'root' is left in 'users' collection with renamed attribute 'lvl'");
     }
 }

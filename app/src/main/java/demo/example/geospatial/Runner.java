@@ -23,8 +23,8 @@ public class Runner extends AbstractRunner {
     public void run(String... args) throws Exception {
 
         repository.deleteAll();
-        LOGGER.warn("deleteAll() - cleared 'cities' collection");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("deleteAll() - cleared 'cities' collection");
+        LOGGER.log(BREAK);
 
         Collection<City> cities = Arrays.asList(new City[] {
                 new City("Glasgow", 598830, Arrays.asList(new Double[] {55.858, -4.259})),
@@ -35,34 +35,34 @@ public class Runner extends AbstractRunner {
         });
 
         repository.save(cities);
-        PRINT_STREAM.println("All 5 cities:");
-        PRINT_STREAM.println(BREAK);
-        PRINT_STREAM.println(cities);
-        PRINT_STREAM.println();
+        LOGGER.log("All 5 cities:");
+        LOGGER.log(BREAK);
+        LOGGER.log(cities);
+        LOGGER.log();
 
         Point reading = new Point(-0.973056, 51.454167);
 
-        PRINT_STREAM.println("findByPopulationGreaterThanEqualAndLocationWithin(1 000 000, Reading, 60 KM) - expecting London:");
-        PRINT_STREAM.println(BREAK);
-        PRINT_STREAM.println(repository.findByPopulationGreaterThanEqualAndLocationWithin(
+        LOGGER.log("findByPopulationGreaterThanEqualAndLocationWithin(1 000 000, Reading, 60 KM) - expecting London:");
+        LOGGER.log(BREAK);
+        LOGGER.log(repository.findByPopulationGreaterThanEqualAndLocationWithin(
                 1000000, reading, new Distance(60, Metrics.KILOMETERS)));
-        PRINT_STREAM.println();
+        LOGGER.log();
 
         Point glasgow = new Point(-4.259, 55.858);
 
-        PRINT_STREAM.println("findByLocationWithinOrNameStartsWith(Glasgow, [100 KM, 500 KM], \"L\") - expecting Liverpool, Birmingham, London:");
-        PRINT_STREAM.println(BREAK);
-        PRINT_STREAM.println(repository.findByLocationWithinOrNameStartsWith(
+        LOGGER.log("findByLocationWithinOrNameStartsWith(Glasgow, [100 KM, 500 KM], \"L\") - expecting Liverpool, Birmingham, London:");
+        LOGGER.log(BREAK);
+        LOGGER.log(repository.findByLocationWithinOrNameStartsWith(
                 glasgow, new Range(100000, 500000), "L"));
-        PRINT_STREAM.println();
+        LOGGER.log();
 
-        PRINT_STREAM.println("findByLocationNearAndPopulationLessThan(Origin, PageRequest[1, 2], 2 000 000) - expecting Glasgow and Edinburgh:");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("findByLocationNearAndPopulationLessThan(Origin, PageRequest[1, 2], 2 000 000) - expecting Glasgow and Edinburgh:");
+        LOGGER.log(BREAK);
         Page page = repository.findByLocationNearAndPopulationLessThan(new Point(0, 0), new PageRequest(1, 2), 2000000);
-        PRINT_STREAM.println(page);
-        PRINT_STREAM.println(page.getContent());
-        PRINT_STREAM.println("Total elements: " + page.getTotalElements());
-        PRINT_STREAM.println("Total pages: " + page.getTotalPages());
-        PRINT_STREAM.println();
+        LOGGER.log(page);
+        LOGGER.log(page.getContent());
+        LOGGER.log("Total elements: " + page.getTotalElements());
+        LOGGER.log("Total pages: " + page.getTotalPages());
+        LOGGER.log();
     }
 }

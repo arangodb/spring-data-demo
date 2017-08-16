@@ -17,8 +17,8 @@ public class Runner extends AbstractRunner {
     public void run(String... args) throws Exception {
 
         repository.deleteAll();
-        PRINT_STREAM.println("Cleared 'character' collection");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("Cleared 'character' collection");
+        LOGGER.log(BREAK);
 
         Character jon = new Character("Jon", "Snow", 25, true);
         Character bran = new Character("Bran", "Stark", 17, true);
@@ -34,36 +34,36 @@ public class Runner extends AbstractRunner {
         characters.add(rickon);
 
         repository.save(characters);
-        PRINT_STREAM.println("Add to character collection: ");
-        PRINT_STREAM.println(BREAK);
-        for (Character c: characters) { PRINT_STREAM.println(c); }
-        PRINT_STREAM.println();
+        LOGGER.log("Add to character collection: ");
+        LOGGER.log(BREAK);
+        for (Character c: characters) { LOGGER.log(c); }
+        LOGGER.log();
 
-        PRINT_STREAM.println("Run countByAliveTrue, expecting 3");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("Run countByAliveTrue, expecting 3");
+        LOGGER.log(BREAK);
         Integer countAlive = repository.countByAliveTrue();
-        PRINT_STREAM.println("Result: " + countAlive);
-        PRINT_STREAM.println();
+        LOGGER.log("Result: " + countAlive);
+        LOGGER.log();
 
-        PRINT_STREAM.println("Run findTop2DistinctBySurnameIgnoreCaseOrderByAgeDesc, expecting Rob then Sansa");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("Run findTop2DistinctBySurnameIgnoreCaseOrderByAgeDesc, expecting Rob then Sansa");
+        LOGGER.log(BREAK);
         Collection<Character> result = repository.findTop2DistinctBySurnameIgnoreCaseOrderByAgeDesc("stark");
-        for (Character c: result) { PRINT_STREAM.println(c); }
-        PRINT_STREAM.println();
+        for (Character c: result) { LOGGER.log(c); }
+        LOGGER.log();
 
-        PRINT_STREAM.println("Run findBySurnameEndsWithAndAgeBetweenAndNameIn, expecting Bran and Sansa");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("Run findBySurnameEndsWithAndAgeBetweenAndNameIn, expecting Bran and Sansa");
+        LOGGER.log(BREAK);
         result = repository.findBySurnameEndsWithAndAgeBetweenAndNameInAllIgnoreCase("ark", 16, 30,
                 new String[] {"Bran", "Sansa"});
-        for (Character c: result) { PRINT_STREAM.println(c); }
-        PRINT_STREAM.println();
+        for (Character c: result) { LOGGER.log(c); }
+        LOGGER.log();
 
-        PRINT_STREAM.println("Run removeBySurnameNotLikeOrAliveFalse then findAll, expecting only Bran and Sansa");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("Run removeBySurnameNotLikeOrAliveFalse then findAll, expecting only Bran and Sansa");
+        LOGGER.log(BREAK);
         repository.removeBySurnameNotLikeOrAliveFalse("Stark");
         Iterable<Character> remaining = repository.findAll();
-        for (Character c: remaining) { PRINT_STREAM.println(c); }
-        PRINT_STREAM.println();
+        for (Character c: remaining) { LOGGER.log(c); }
+        LOGGER.log();
 
     }
 }

@@ -18,8 +18,8 @@ public class Runner extends AbstractRunner {
     public void run(String... args) throws Exception {
 
         repository.deleteAll();
-        PRINT_STREAM.println("Cleared 'customer' collection");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("Cleared 'customer' collection");
+        LOGGER.log(BREAK);
 
         Customer john = new Customer("John", "Smith", 56);
         Customer adam = new Customer("Adam", "Smith", 294);
@@ -31,32 +31,32 @@ public class Runner extends AbstractRunner {
         customers.add(matt);
 
         repository.save(customers);
-        PRINT_STREAM.println("Add to character collection: ");
-        PRINT_STREAM.println(BREAK);
-        for (Customer c: customers) { PRINT_STREAM.println(c); }
-        PRINT_STREAM.println();
+        LOGGER.log("Add to character collection: ");
+        LOGGER.log(BREAK);
+        for (Customer c: customers) { LOGGER.log(c); }
+        LOGGER.log();
 
-        PRINT_STREAM.println("Run getByNameAql, passing 'Adam'");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("Run getByNameAql, passing 'Adam'");
+        LOGGER.log(BREAK);
         Optional<Customer> adamOption = repository.getByNameAql("customer", "Adam", new AqlQueryOptions());
-        PRINT_STREAM.println(adamOption);
-        PRINT_STREAM.println();
+        LOGGER.log(adamOption);
+        LOGGER.log();
 
-        PRINT_STREAM.println("Run getByIdAndAgeAql, passing 'matt.getId' and '34'");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("Run getByIdAndAgeAql, passing 'matt.getId' and '34'");
+        LOGGER.log(BREAK);
         Map<String, Object> returnVal = repository.getByIdAndAgeAql(matt.getId(), 34);
-        PRINT_STREAM.println("Customer {id: " + returnVal.get("_id") + ", name: " + returnVal.get("name") +
+        LOGGER.log("Customer {id: " + returnVal.get("_id") + ", name: " + returnVal.get("name") +
                 ", surname: " + returnVal.get("surname") + ", age: " + returnVal.get("age") + "}");
-        PRINT_STREAM.println();
+        LOGGER.log();
 
-        PRINT_STREAM.println("Run getByIdAndNameWithBindVarsAql, passing 'john.getId' and 'John'");
-        PRINT_STREAM.println(BREAK);
+        LOGGER.log("Run getByIdAndNameWithBindVarsAql, passing 'john.getId' and 'John'");
+        LOGGER.log(BREAK);
         Map<String, Object> bindVars = new HashMap<>();
         bindVars.put("id", john.getId());
         BaseDocument returned = repository.getByIdAndNameWithBindVarsAql("John", bindVars);
-        PRINT_STREAM.println("Customer {id: " + returned.getId() + ", name: " + returned.getProperties().get("name") +
+        LOGGER.log("Customer {id: " + returned.getId() + ", name: " + returned.getProperties().get("name") +
                 ", surname: " + returned.getProperties().get("surname") + ", age: " + returned.getProperties().get("age") + "}");
-        PRINT_STREAM.println();
+        LOGGER.log();
 
     }
 }
