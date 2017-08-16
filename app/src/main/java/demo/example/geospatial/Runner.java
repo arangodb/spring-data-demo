@@ -1,11 +1,11 @@
 package demo.example.geospatial;
 
-import com.arangodb.springframework.core.repository.query.derived.geo.Range;
 import demo.AbstractRunner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Range;
 import org.springframework.data.geo.Distance;
 import org.springframework.data.geo.Metrics;
 import org.springframework.data.geo.Point;

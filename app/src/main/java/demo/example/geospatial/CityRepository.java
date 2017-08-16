@@ -1,7 +1,7 @@
 package demo.example.geospatial;
 
 import com.arangodb.springframework.core.repository.ArangoRepository;
-import com.arangodb.springframework.core.repository.query.derived.geo.Range;
+import org.springframework.data.domain.Range;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.geo.*;
 
