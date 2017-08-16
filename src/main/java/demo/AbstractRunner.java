@@ -9,7 +9,7 @@ import java.io.PrintStream;
 public abstract class AbstractRunner implements CommandLineRunner {
 
 
-    public static final MyLoggerImpl LOGGER = new MyLoggerImpl(LoggingLevel.ERROR);
+    public static final MyLoggerImpl LOGGER = new MyLoggerImpl(LoggingLevel.INFO);
     public final String BREAK = "-------------------------------";
 
     @Override
@@ -34,7 +34,7 @@ public abstract class AbstractRunner implements CommandLineRunner {
         }
 
         public void log (Object o) {
-//            System.err.println(o); if (true) { return; }
+            System.err.println(o); if (true) { return; } // comment this line out to use Logger
             if (o == null) { o = "null"; }
             switch (loggingLevel) {
                 case INFO:
@@ -56,9 +56,5 @@ public abstract class AbstractRunner implements CommandLineRunner {
         }
     }
 
-    private enum LoggingLevel {
-
-        TRACE, DEBUG, INFO, WARN, ERROR
-
-    }
+    private enum LoggingLevel { TRACE, DEBUG, INFO, WARN, ERROR }
 }
