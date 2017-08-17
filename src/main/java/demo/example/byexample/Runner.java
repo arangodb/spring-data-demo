@@ -61,7 +61,7 @@ public class Runner extends AbstractRunner {
         Example ageTransformExample = Example.of(new Person("Bran", "ark", 17),
                         ExampleMatcher.matchingAll()
                                 .withMatcher("surname", match -> match.endsWith())
-                                .withTransformer("age", age -> ((long) age) + 4)
+                                .withTransformer("age", age -> ((int) age) + 4)
                                 .withIgnorePaths("name")
         );
         LOGGER.log("Find by surname ending 'ark', with age 17 transformed +4, ignoring first name");

@@ -12,9 +12,9 @@ public class City {
     private long population;
 
     @GeoIndexed
-    private List<Double> location;
+    private double[] location;
 
-    public City(String name, long population, List<Double> location) {
+    public City(String name, long population, double[] location) {
         this.name = name;
         this.population = population;
         this.location = location;
@@ -23,6 +23,6 @@ public class City {
     @Override
     public String toString() {
         return String.format("City : {name: '%s', population: '%d, location: [%f, %f]}",
-                name, population, location.get(0), location.get(1));
+                name, population, location[0], location[1]);
     }
 }

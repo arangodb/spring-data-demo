@@ -9,9 +9,9 @@ public class Person {
     @Field("firstname")
     private String name;
     private String surname;
-    private long age;
+    private int age;
 
-    public Person(String name, String surname, long age) {
+    public Person(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
         this.age = age;
