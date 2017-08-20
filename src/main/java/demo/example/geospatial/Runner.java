@@ -28,11 +28,11 @@ public class Runner extends AbstractRunner {
         LOGGER.log(BREAK);
 
         Collection<City> cities = Arrays.asList(new City[] {
-                new City("Glasgow", 598830, Arrays.asList(new Double[] {55.858, -4.259})),
-                new City("Edinburgh", 495360, Arrays.asList(new Double[] {55.953056, -3.188889})),
-                new City("London", 8788000, Arrays.asList(new Double[] {51.507222, -0.1275})),
-                new City("Birmingham", 1101000, Arrays.asList(new Double[] {52.483056, -1.893611})),
-                new City("Liverpool", 465700, Arrays.asList(new Double[] {53.4, -2.983333}))
+                new City("Glasgow", 598830, new double[] {55.858, -4.259}),
+                new City("Edinburgh", 495360, new double[] {55.953056, -3.188889}),
+                new City("London", 8788000, new double[] {51.507222, -0.1275}),
+                new City("Birmingham", 1101000, new double[] {52.483056, -1.893611}),
+                new City("Liverpool", 465700, new double[] {53.4, -2.983333})
         });
 
         repository.save(cities);

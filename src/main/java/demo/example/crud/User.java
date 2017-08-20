@@ -16,6 +16,7 @@ public class User {
     @Rev
     private String rev;
 
+    @FulltextIndexed
     private String username;
 
     @Field("lvl")
