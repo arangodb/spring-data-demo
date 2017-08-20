@@ -9,6 +9,7 @@ import org.springframework.data.domain.Range;
 import org.springframework.data.geo.Distance;
 import org.springframework.data.geo.Metrics;
 import org.springframework.data.geo.Point;
+import org.springframework.data.geo.Polygon;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -63,6 +64,14 @@ public class Runner extends AbstractRunner {
         LOGGER.log(page.getContent());
         LOGGER.log("Total elements: " + page.getTotalElements());
         LOGGER.log("Total pages: " + page.getTotalPages());
+        LOGGER.log();
+
+        Point belfast = new Point(-5.93, 54.597);
+        Point durham = new Point(-1.5733, 54.7761);
+        Point inverness = new Point(-4.2254, 57.4718);
+        LOGGER.log("findByLocationWithin(Polygon[Belfast, Durham, Inverness]) - expecting Edinburgh, Glagow:");
+        LOGGER.log(BREAK);
+        LOGGER.log(repository.findByLocationWithin(new Polygon(belfast, durham, inverness)));
         LOGGER.log();
     }
 }
