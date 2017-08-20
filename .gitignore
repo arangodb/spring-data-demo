@@ -22,6 +22,6 @@
 hs_err_pid*
 
 # Intellij project files
-/.idea
+.idea/
 *.iml
-/target
+target/
