@@ -3,10 +3,15 @@ package demo.example.byreference;
 import com.arangodb.springframework.core.repository.ArangoRepository;
 
 import java.util.List;
+import java.util.Set;
 
 public interface EmployeeRepository extends ArangoRepository<Employee> {
 
-    Employee findByManagerNameStartsWith(String prefix);
+    Set<Employee> findByManagerNameIn(String[] names);
 
-    List<Employee> findByColleaguesNameRegex(String pattern);
+    Set<Employee> findByManagerStartsWith(String prefix);
+
+    Set<Employee> findByManagerNull();
+
+    List<Employee> findByAssignmentsDescriptionRegex(String pattern);
 }

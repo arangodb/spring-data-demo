@@ -16,7 +16,7 @@ public class Employee {
     private Employee manager;
 
     @Ref
-    private Collection<Employee> colleagues;
+    private Collection<Assignment> assignments;
 
     public Employee(String name, Employee manager) {
         this.name = name;
@@ -25,15 +25,19 @@ public class Employee {
 
     public String getId() { return id; }
 
-    public void setColleagues(Collection<Employee> colleagues) {
-        this.colleagues = colleagues;
-    }
+    public void setName(String name) { this.name = name; }
+
+    public void setAssignments(Collection<Assignment> assignments) { this.assignments = assignments; }
 
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        colleagues.forEach(e -> builder.append((builder.length() == 0 ? "" : ", ") + "'" + e.getId() + "'"));
-        return String.format("Employee: {id: '%s', name: '%s', manager(id): '%s', colleagues(ids): [%s]}",
+        if (assignments != null) {
+            assignments.forEach(a -> {
+                builder.append((builder.length() == 0 ? "" : ", ") + "'" + (a == null ? "null" : a.getDescription()) + "'");
+            });
+        }
+        return String.format("Employee: {id: '%s', name: '%s', manager(id): '%s', assignments(ids): [%s]}",
                 id, name, manager == null ? "null" : manager.getId(), builder.toString());
     }
 }
