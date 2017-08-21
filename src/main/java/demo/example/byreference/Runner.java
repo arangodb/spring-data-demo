@@ -56,7 +56,7 @@ public class Runner extends AbstractRunner {
         LOGGER.log(repository.findByManagerNameIn(new String[] {"Bob"}));
         LOGGER.log();
 
-        LOGGER.log("findByAssignmentsDescriptionREgex(\"tation$\") - expecting Bob and Cindy:");
+        LOGGER.log("findByAssignmentsDescriptionRegex(\"tation$\") - expecting Bob and Cindy:");
         LOGGER.log(BREAK);
         LOGGER.log(repository.findByAssignmentsDescriptionRegex("tation$"));
         LOGGER.log();

@@ -69,6 +69,7 @@ public class Runner extends AbstractRunner {
         Point belfast = new Point(-5.93, 54.597);
         Point durham = new Point(-1.5733, 54.7761);
         Point inverness = new Point(-4.2254, 57.4718);
+
         LOGGER.log("findByLocationWithin(Polygon[Belfast, Durham, Inverness]) - expecting Edinburgh, Glagow:");
         LOGGER.log(BREAK);
         LOGGER.log(repository.findByLocationWithin(new Polygon(belfast, durham, inverness)));
