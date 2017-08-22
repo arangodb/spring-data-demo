@@ -14,8 +14,6 @@ public class Character {
     private int age;
     private boolean alive;
 
-    public Character() { }
-
     public Character(final String name, final String surname, final int age, final boolean alive) {
         this.name = name;
         this.surname = surname;

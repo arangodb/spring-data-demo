@@ -31,6 +31,6 @@ public class User {
 
     @Override
     public String toString() {
-        return String.format("User: {id: '%s', key: '%s', rev: '%s', username: '%s', level: '%d'}", id, key, rev, username, level);
+        return String.format("User: {id: '%s', key: '%s', rev: '%s', username: '%s', level: '%d'}\n", id, key, rev, username, level);
     }
 }

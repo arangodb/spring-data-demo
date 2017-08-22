@@ -37,7 +37,7 @@ public class Employee {
                 builder.append((builder.length() == 0 ? "" : ", ") + "'" + (a == null ? "null" : a.getDescription()) + "'");
             });
         }
-        return String.format("Employee: {id: '%s', name: '%s', manager(id): '%s', assignments(ids): [%s]}",
+        return String.format("\nEmployee: {id: '%s', name: '%s', manager(id): '%s', assignments: [%s]}",
                 id, name, manager == null ? "null" : manager.getId(), builder.toString());
     }
 }

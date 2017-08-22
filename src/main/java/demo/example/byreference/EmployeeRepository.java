@@ -9,9 +9,5 @@ public interface EmployeeRepository extends ArangoRepository<Employee> {
 
     Set<Employee> findByManagerNameIn(String[] names);
 
-    Set<Employee> findByManagerStartsWith(String prefix);
-
-    Set<Employee> findByManagerNull();
-
     List<Employee> findByAssignmentsDescriptionRegex(String pattern);
 }
