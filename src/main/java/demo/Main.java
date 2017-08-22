@@ -12,7 +12,7 @@ public class Main {
 	private static final Map<String, Class<?>> EXAMPLES = new HashMap<>();
 
 	public static void main(String[] args) {
-		System.exit(SpringApplication.exit(SpringApplication.run(EXAMPLES.get("geospatial"), args)));
+		System.exit(SpringApplication.exit(SpringApplication.run(EXAMPLES.get("derived"), args)));
 	}
 
 	static {
