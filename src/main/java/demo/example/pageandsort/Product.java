@@ -13,6 +13,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return String.format("Product: {name: '%s', price: '%d'}", name, price);
+        return String.format("\nProduct: {name: '%s', price: '%d'}", name, price);
     }
 }
