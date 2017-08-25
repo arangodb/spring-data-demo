@@ -52,16 +52,21 @@ public class Runner extends AbstractRunner {
 
         LOGGER.log("Saving owners Matt, Tom and Sarah");
         LOGGER.log();
+
+        // save owners to database
         repository.save(owners);
 
-
+        // insert houses and rooms, going to different collection than the repository
+        // so template is used
         operations.insert(houses, House.class);
         operations.insert(rooms, Room.class);
 
+        // save owns relations using template
         operations.insert(new Owns(matt, mansion));
         operations.insert(new Owns(tom, small));
         operations.insert(new Owns(sarah, big));
 
+        // save contains relations using template
         operations.insert(new Contains(mansion, sauna));
         operations.insert(new Contains(mansion, kitchen));
         operations.insert(new Contains(mansion, bedroom));

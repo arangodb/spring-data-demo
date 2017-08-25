@@ -44,6 +44,8 @@ public class Runner extends AbstractRunner {
         cindy.setAssignments(Arrays.asList(new Assignment[] { presentation, demonstration }));
         john.setAssignments(Arrays.asList(new Assignment[] { demonstration }));
 
+        // save manager ref before other objects
+        repository.save(bob);
         repository.save(employees);
 
         LOGGER.log("All 3 employees:");
