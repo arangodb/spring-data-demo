@@ -64,6 +64,5 @@ public class Runner extends AbstractRunner {
         Iterable<Character> remaining = repository.findAll();
         for (Character c: remaining) { LOGGER.log(c); }
         LOGGER.log();
-
     }
 }

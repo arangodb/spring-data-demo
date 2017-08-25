@@ -22,7 +22,7 @@ public class City {
 
     @Override
     public String toString() {
-        return String.format("City : {name: '%s', population: '%d, location: [%f, %f]}",
+        return String.format("\nCity : {name: '%s', population: '%d, location: [%f, %f]}",
                 name, population, location[0], location[1]);
     }
 }

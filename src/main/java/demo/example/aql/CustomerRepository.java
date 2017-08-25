@@ -19,5 +19,5 @@ public interface CustomerRepository extends ArangoRepository<Customer> {
     Map<String, Object> getByIdAndAgeAql(String id, long age);
 
     @Query("FOR c IN customer FILTER c._id == @id AND c.name == @0 RETURN c")
-    BaseDocument getByIdAndNameWithBindVarsAql(String name, @BindVars Map bindVars);
+    BaseDocument getByIdAndNameWithBindVarsAql(String name, @BindVars Map<String, Object> bindVars);
 }
