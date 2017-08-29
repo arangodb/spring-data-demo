@@ -13,5 +13,4 @@ public interface CharacterRepository extends ArangoRepository<Character> {
     Collection<Character> findBySurnameEndsWithAndAgeBetweenAndNameInAllIgnoreCase(String suffix, int lowerBound, int upperBound, String[] nameList);
 
     void removeBySurnameNotLikeOrAliveFalse(String surnamePattern);
-
 }
