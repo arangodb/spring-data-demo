@@ -2,7 +2,7 @@
 
 # Spring Data ArangoDB - Demo
 
-This is a short demo how to use [Spring Data ArangoDB](https://github.com/arangodb/spring-data) with an example dataset of **Game of Thrones** characters and locations.
+This is a extensive demo how to use [Spring Data ArangoDB](https://github.com/arangodb/spring-data) with an example dataset of **Game of Thrones** characters and locations.
 
 ## Table of Contents
 
