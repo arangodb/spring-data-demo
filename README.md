@@ -111,7 +111,7 @@ public class DemoApplication {
 
 ## Create an Configuration class
 
-We also need a configuration class to setup everthing to connect to our ArangoDB instance and to declare that all needed Spring Beans are processed by the Spring container.
+We also need a configuration class to setup everything to connect to our ArangoDB instance and to declare that all needed Spring Beans are processed by the Spring container.
 
 * `@EnableArangoRepositories` Defines where Spring can find your repositories
 * `arango()` Method to configure the connection to the ArangoDB instance
@@ -197,7 +197,7 @@ public class Character {
 
 ## Create a repository
 
-Now that we have our data model we want to store data. For this we create a repository interface which extends `ArangoRepository`. This give use access to CRUD operations, pagein and query by example mechanics.
+Now that we have our data model we want to store data. For this we create a repository interface which extends `ArangoRepository`. This gives us access to CRUD operations, pagein and query by example mechanics.
 
 ``` java
 package com.arangodb.spring.demo.repository;
@@ -306,7 +306,7 @@ final Character deadNed = repository.findOne(nedStark.getId());
 System.out.println(String.format("The 'alive' flag of the persisted Ned Stark is now '%s'", deadNed.isAlive()));
 ```
 
-If we run our demo a second time the console output should look:
+If we run our demo a second time the console output should look like this:
 
 ```
 Ned Stark saved in the database with id: 'characters/261070'
@@ -318,7 +318,7 @@ Ned Stark after 'alive' flag was updated: Character [id=characters/261070, name=
 
 What we can do with a single entity, we can also do with multiple entities. It's not just a single method call for convenience purpose, it also requires only one database request.
 
-Let's save a bunch of characters. Only main casts of Game of Thrones but that's already a lot. After that we fetch all of them from our collection and count them.
+Let's save a bunch of characters. Only main casts of Game of Thrones - but that's already a lot. After that we fetch all of them from our collection and count them.
 
 Extend the `run()` method with these lines of code.
 
@@ -367,7 +367,7 @@ Save 43 additional characters
 A total of 44 characters are persisted in the database
 ```
 
-Counting is just an example of what you can do with the returned entities and it's also a bad one. Fetching every entity from a collection only to count them is very inefficient. As an alternative we can use `ArangoOperations` for it.
+Counting is just an example of what you can do with the returned entities and it's also not a perfect one. Fetching every entity from a collection only to count them is quite inefficient. As an alternative we can use `ArangoOperations` for it.
 
 ``` java
 long count = operations.collection(Character.class).count();
@@ -375,9 +375,9 @@ long count = operations.collection(Character.class).count();
 
 ## Create an index
 
-As you can see, we saved 43 additional characters and fetched a total of 44 characters from the database. The one more is our previews saved character Ned Stark. When you take a closer look into `createCharacters()` you will see that there is also an character instance for Ned Stark. So now we have two Ned Starks in our collection.
+As you can see, we saved 43 additional characters and fetched a total of 44 characters from the database. The additional one is our previously saved character - Ned Stark. When you take a closer look into `createCharacters()` you will see that there is also a character instance for Ned Stark. So now we have two Ned Starks in our collection.
 
-To avoid this we could create a unique hash index on our collection `characters` for the field `name` and `surname`. To do so we have to add the `@HashIndex` annotation in our class `Character`. The first time our collection will be used within our program the index will be automatically created on the collection.
+To avoid this we could create a unique hash index on our collection `characters` for the field `name` and `surname`. To do so we have to add the `@HashIndex` annotation in our class `Character`. The first time our collection will be used within our program, the index will be automatically created on the collection.
 
 ``` java
 @Document("characters")
@@ -385,7 +385,7 @@ To avoid this we could create a unique hash index on our collection `characters`
 public class Character {
 ```
 
-The next time we run our demo the output will be changed to:
+Next time we run our demo the output will be changed to:
 
 ```
 Save 43 additional characters
@@ -422,7 +422,6 @@ Character [id=characters/264840, name=Catelyn, surname=Stark, alive=false, age=4
 ```
 
 # Query by example
-```
 
 Since version 1.12 Spring Data provides the interface `QueryByExampleExecutor` which is also supported by ArangoDB Spring Data. It allows execution of queries by `Example` instances.
 
@@ -482,7 +481,7 @@ Found Character [id=characters/264832, name=Ned, surname=Stark, alive=false, age
 
 ## Multiple entities
 
-Now we want to find more than one entity. The time I watched Game of Thrones I saw a lot of Starks dying, so lets take look who is already dead. For this we create a new instance of Character with `surname` 'Stark' and `alive` false. Because we only care of these two fields in our entity we have to ignore the other fields in our ExampleMatcher.
+Now we want to find more than one entity. During the time when I watched Game of Thrones I saw a lot of Starks dying, so lets take look who is already dead. For this we create a new instance of Character with `surname` 'Stark' and `alive` false. Because we only care of these two fields in our entity, we have to ignore the other fields in our ExampleMatcher.
 
 ``` java
 System.out.println("## Find all dead Starks");
@@ -501,7 +500,7 @@ Character [id=characters/264840, name=Catelyn, surname=Stark, alive=false, age=4
 Character [id=characters/264849, name=Robb, surname=Stark, alive=false, age=null]
 ```
 
-In addition to search for specific values from our example entity, we can search for dynamically depending values. In the next example we search for a Stark with is 30 younger than Ned Stark. Instead of changing the age for Ned Stark in the before fetched entity, we use a transformer within the ExampleMatcher and subtract 30 from the age of Ned Stark.
+In addition to search for specific values from our example entity, we can search for dynamically depending values. In the next example we search for a Stark who is 30 years younger than Ned Stark. Instead of changing the age for Ned Stark in the previously fetched entity, we use a transformer within the ExampleMatcher and subtract 30 from the age of Ned Stark.
 ``` java
 System.out.println("## Find all Starks which are 30 years younger than Ned Stark");
 
@@ -519,7 +518,7 @@ The console output should only include Arya Stark.
 Character [id=characters/264848, name=Arya, surname=Stark, alive=true, age=11]
 ```
 
-Aside from searching for exact and transformed values we can - in case of type `String` also search for other expressions. In this last case we search for every character which it's `surname` ends with 'ark'. The console output should include every Stark.
+Aside from searching for exact and transformed values we can - in case of type `String` also search for other expressions. In this last case we search for every character whoes `surname` ends with 'ark'. The console output should include every Stark.
 
 ``` java
 System.out.println("## Find all character which surname ends with 'ark' (ignore case)");
@@ -533,7 +532,7 @@ ark.forEach(System.out::println);
 
 Spring Data ArangoDB supports Queries derived from methods names by splitting it into its semantic parts and converting
 into AQL. The mechanism strips the prefixes `find..By`, `get..By`, `query..By`, `read..By`, `stream..By`, `count..By`,
-`exists..By`, `delete..By`, `remove..By` from the method and parses the rest. The By acts as a separator to indicate the
+`exists..By`, `delete..By`, `remove..By` from the method and parses the rest. The "By" acts as a separator to indicate the
 start of the criteria for the query to be built. You can define conditions on entity properties and concatenate them
 with `And` and `Or`.
 
@@ -640,7 +639,7 @@ Character [id=characters/264847, name=Sansa, surname=Stark, alive=true, age=13]
 
 ## Single entity result
 
-With derived queries we can not only query for multiple entities. If we expect only a single entity as the result we can use the corresponding return type.
+With derived queries we cannot only query for multiple entities. If we expect only a single entity as the result we can use the corresponding return type.
 
 Because we have a unique hash index on the fields `name` and `surname` we can expect only a single entity when we query for both.
 
@@ -678,7 +677,7 @@ tyrion.ifPresent(c -> {
 });
 ```
 
-The console output should in both cases look:
+The console output should in both cases look like this:
 
 ```
 ## Find a single character by name & surname
@@ -687,7 +686,7 @@ Found Character [id=characters/264854, name=Tyrion, surname=Lannister, alive=tru
 
 ## countBy
 
-Aside from `findBy` there are other prefixes supported - like `countBy`. Other than the before used `operations.collection(Character.class).count();` the `countBy` is able to include filter conditions.
+Aside from `findBy` there are other prefixes supported - like `countBy`. Other than previously used `operations.collection(Character.class).count();` the `countBy` is able to include filter conditions.
 
 With the following lines of code we are able to count only characters which are still alive.
 
@@ -707,7 +706,7 @@ System.out.println(String.format("There are %s characters still alive", alive));
 
 ## removeBy
 
-The last example for derived queries is `removeBy`. In that we remove all characters except of which surname is 'Stark' and which are still alive.
+The last example for derived queries is `removeBy`. Here we remove all characters except those whose surname is 'Stark' and who are still alive.
 
 ``` java
 System.out.println("## Remove all characters except of which surname is 'Stark' and which are still alive");
@@ -726,9 +725,9 @@ Character [id=characters/264848, name=Arya, surname=Stark, alive=true, age=11]
 
 ## Relations
 
-Because ArangoDB as a multi-model database provides graph as a key feature, Spring Data ArangoDB also supports a feature set for it.
+Because ArangoDB as a multi-model database providing graphs as a key feature, Spring Data ArangoDB also supports a feature set for it.
 
-With the `@Relations` annotation we can define relationships between our entities. To demonstrate this we use our before created entity `Character`.
+With the `@Relations` annotation we can define relationships between our entities. To demonstrate this we use our previously created entity `Character`.
 
 First we have to add a field `Collection<Character> childs` annotated with `@Relations(edges = ChildOf.class, lazy = true)` to `Character`.
 
@@ -751,7 +750,7 @@ public class Character {
 }
 ```
 
-Then we have to created an entity for the edge we stated in `@Relations`. Other than a normal entity annotated with `@Document` this entity will be annotated with `@Edge`. This allows Spring Data ArangoDB to create a collection from type `EDGE` in the database. Just like `Character`, `ChildOf` will also get a field for its `id`. To connect two `Character` entities it also get a field from type `Character` annotated with `@From` and a field from type `Character` annotated with `@To`. `ChildOf` will be persisted in the database with the ids of these two `Character`.
+Then we have to created an entity for the edge we stated in `@Relations`. Other than a normal entity annotated with `@Document` this entity will be annotated with `@Edge`. This allows Spring Data ArangoDB to create a collection from type `EDGE` in the database. Just like `Character`, `ChildOf` will also get a field for its `id`. To connect two `Character` entities it also gets a field from type `Character` annotated with `@From` and a field from type `Character` annotated with `@To`. `ChildOf` will be persisted in the database with the ids of these two `Character`.
 
 ``` java
 package com.arangodb.spring.demo.entity;
@@ -808,7 +807,7 @@ Now we implement another `CommandLineRunner` called `RelationsRunner` and add it
 Object[] runner = new Object[] { CrudRunner.class, ByExampleRunner.class, DerivedMethodRunner.class, RelationsRunner.class };
 ```
 
-In the new created `RelationsRunner` we inject `CharacterRepository` and `ChildOfRepository` and built our relations. First we have to save some characters because we removed the most of them within the last chapter of this demo. To do so we use the static `createCharacter()` method from our `CrudRunner`. After we have successfully persist our characters we want to save some relationships with our edge entity `ChildOf`. Because `ChildOf` require instances of `Character` with `id` field set from the database we first have to find them through our `CharacterRepository`. To ensure we find the correct `Character` we use the derived query method `findByNameAndSurename(String, String)` which give us one specific `Character`. Then we create instances of `ChildOf` and save them through `ChildOfRepository`.
+In the new created `RelationsRunner` we inject `CharacterRepository` and `ChildOfRepository` and built our relations. First we have to save some characters because we removed most of them within the last chapter of this demo. To do so we use the static `createCharacter()` method from our `CrudRunner`. After we have successfully persisted our characters we want to save some relationships with our edge entity `ChildOf`. Because `ChildOf` requires instances of `Character` with `id` field set from the database we first have to find them in our `CharacterRepository`. To ensure we find the correct `Character` we use the derived query method `findByNameAndSurename(String, String)` which gives us one specific `Character`. Then we create instances of `ChildOf` and save them through `ChildOfRepository`.
 
 ``` java
 package com.arangodb.spring.demo.runner;
@@ -901,7 +900,7 @@ Character [id=characters/273603, name=Sansa, surname=Stark, alive=true, age=13]
 
 The field `childs` is not persisted in the character entity itself, it is represent through the edge `ChildOf`. Nevertheless we can write a derived method which includes properties of all connected `Character`.
 
-With the following two methods - added in `CharacterRepository` - we can query for `Character` which have a child with a given `name` and `Character` which have a child in an `age` between two given integer.
+With the following two methods - added in `CharacterRepository` - we can query for `Character` which has a child with a given `name` and `Character` which has a child in an `age` between two given integer.
 
 ``` java
 Iterable<Character> findByChildsName(String name);
@@ -909,7 +908,7 @@ Iterable<Character> findByChildsName(String name);
 Iterable<Character> findByChildsAgeBetween(int lowerBound, int upperBound);
 ```
 
-Now we add the method calls in `RelationsRunnter` and search for all parents of 'Sansa' and all parents which have a child between 16 and 20 years.
+Now we add a method that calls in `RelationsRunnter` and search for all parents of 'Sansa' and all parents which have a child between 16 and 20 years.
 
 ``` java
 System.out.println("## These are the parents of 'Sansa'");
@@ -935,7 +934,7 @@ Character [id=characters/273656, name=Cersei, surname=Lannister, alive=true, age
 
 # Query methods
 
-When it comes to more complexe use cases where a derived method would become way to long and unreadable queries - using [ArangoDB Query Language (AQL)](https://docs.arangodb.com/3.2/AQL/) - can be supplied with the `@Query` annotation on methods in our repositories.
+When it comes to more complex use cases where a derived method would become way too long and unreadable queries - using [ArangoDB Query Language (AQL)](https://docs.arangodb.com/3.2/AQL/) - can be supplied with the `@Query` annotation on methods in our repositories.
 
 AQL supports the usage of [bind parameters](https://docs.arangodb.com/current/AQL/Fundamentals/BindParameters.html), thus allowing to separate the query text from literal values used in the query. There are three ways of passing bind parameters to the query in the `@Query` annotation.
 
@@ -943,7 +942,7 @@ AQL supports the usage of [bind parameters](https://docs.arangodb.com/current/AQ
 
 Using number matching, arguments will be substituted into the query in the order they are passed to the query method.
 
-Lets show this by a very simple query. We want to query all characters which are older than a given value and sort them in descending order. Like every time before we add a new method to `CharacterRepository`. This time the method name does not matter, the functionality comes with the query in the `@Query` annotation. The method parameter `int value` will be passed as the bind parameter `@0` in the query. A second parameter would be passed as `@1` and so on.
+Lets have a look at this in a very simple query. We want to query all characters which are older than a given value and sort them in descending order. Like every time before we add a new method to `CharacterRepository`. This time the method name does not matter, the functionality comes with the query in the `@Query` annotation. The method parameter `int value` will be passed as the bind parameter `@0` in the query. A second parameter would be passed as `@1` and so on.
 
 ``` java
 @Query("FOR c IN characters FILTER c.age > @0 SORT c.age DESC RETURN c")
@@ -987,7 +986,7 @@ public class AQLRunner implements CommandLineRunner {
 Object[] runner = new Object[] { CrudRunner.class, ByExampleRunner.class, DerivedQueryRunner.class, RelationsRunner.class, AQLRunner.class };
 ```
 
-We called our new method with a value of `21`. Many of our characters have a `age` of value `null`, these also doesn't fit in our filter condition. Accordingly our console output should look:
+We called our new method with a value of `21`. Many of our characters have `age` with a value `null`, these also don't fit in our filter condition. Accordingly our console output should look like this:
 
 ```
 # AQL queries
