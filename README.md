@@ -80,7 +80,7 @@ We have to create a maven pom.xml:
     </dependency>
     <dependency>
       <groupId>com.arangodb</groupId>
-      <artifactId>spring-data</artifactId>
+      <artifactId>arangodb-spring-data</artifactId>
       <version>1.0.0</version>
     </dependency>
   </dependencies>
