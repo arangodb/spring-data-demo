@@ -367,9 +367,12 @@ Save 43 additional characters
 A total of 44 characters are persisted in the database
 ```
 
-Counting is just an example of what you can do with the returned entities and it's also not a perfect one. Fetching every entity from a collection only to count them is quite inefficient. As an alternative we can use `ArangoOperations` for it.
+Counting is just an example of what you can do with the returned entities and it's also not a perfect one. Fetching every entity from a collection only to count them is quite inefficient. As an alternative we can use the method `count()` from `ArangoRepository` or we use `ArangoOperations` for it.
 
 ``` java
+// count with ArangoRepository
+long count = repository.count();
+// count with ArangoOperations
 long count = operations.collection(Character.class).count();
 ```
 
