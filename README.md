@@ -753,7 +753,7 @@ public class Character {
 }
 ```
 
-Then we have to create an entity for the edge we stated in `@Relations`. Other than a normal entity annotated with `@Document` this entity will be annotated with `@Edge`. This allows Spring Data ArangoDB to create a collection from type `EDGE` in the database. Just like `Character`, `ChildOf` will also get a field for its `id`. To connect two `Character` entities it also gets a field from type `Character` annotated with `@From` and a field from type `Character` annotated with `@To`. `ChildOf` will be persisted in the database with the ids of these two `Character`.
+Then we have to create an entity for the edge we stated in `@Relations`. Other than a normal entity annotated with `@Document` this entity will be annotated with `@Edge`. This allows Spring Data ArangoDB to create a edge collection in the database. Just like `Character`, `ChildOf` will also get a field for its `id`. To connect two `Character` entities it also gets a field from type `Character` annotated with `@From` and a field from type `Character` annotated with `@To`. `ChildOf` will be persisted in the database with the ids of these two `Character`.
 
 ``` java
 package com.arangodb.spring.demo.entity;
