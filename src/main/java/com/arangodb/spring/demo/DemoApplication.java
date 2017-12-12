@@ -27,7 +27,7 @@ import com.arangodb.spring.demo.runner.AQLRunner;
 import com.arangodb.spring.demo.runner.ByExampleRunner;
 import com.arangodb.spring.demo.runner.CrudRunner;
 import com.arangodb.spring.demo.runner.DerivedQueryRunner;
-import com.arangodb.spring.demo.runner.GeospacialRunner;
+import com.arangodb.spring.demo.runner.GeospatialRunner;
 import com.arangodb.spring.demo.runner.RelationsRunner;
 
 /**
@@ -39,7 +39,7 @@ public class DemoApplication {
 
 	public static void main(final String... args) {
 		final Object[] runner = new Object[] { CrudRunner.class, ByExampleRunner.class, DerivedQueryRunner.class,
-				RelationsRunner.class, AQLRunner.class, GeospacialRunner.class };
+				RelationsRunner.class, AQLRunner.class, GeospatialRunner.class };
 		System.exit(SpringApplication.exit(SpringApplication.run(runner, args)));
 	}
 

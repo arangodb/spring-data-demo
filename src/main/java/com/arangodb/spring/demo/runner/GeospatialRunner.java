@@ -40,7 +40,7 @@ import com.arangodb.spring.demo.repository.LocationRepository;
  * @author Mark Vollmary
  *
  */
-public class GeospacialRunner implements CommandLineRunner {
+public class GeospatialRunner implements CommandLineRunner {
 
 	@Autowired
 	private LocationRepository repository;
