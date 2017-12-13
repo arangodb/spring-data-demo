@@ -539,7 +539,7 @@ into AQL. The mechanism strips the prefixes `find..By`, `get..By`, `query..By`, 
 start of the criteria for the query to be built. You can define conditions on entity properties and concatenate them
 with `And` and `Or`.
 
-The complete list of part types for derived queries can be found [here](https://github.com/arangodb/spring-data#derived-methods).
+The complete list of part types for derived queries can be found [here](https://github.com/arangodb/spring-data#derived-queries).
 
 ## Simple findBy
 
