@@ -9,11 +9,11 @@ This is an extensive demo on how to use [Spring Data ArangoDB](https://github.co
 * [Getting Started](#getting-started)
   * [Build a project with Maven](#build-a-project-with-maven)
   * [Create an Application class](#create-an-application-class)
-  * [Create an Configuration class](#create-an-configuration-class)
+  * [Create a Configuration class](#create-a-configuration-class)
 * [Data modeling](#data-modeling)
 * [CRUD operations](#crud-operations)
   * [Create a repository](#create-a-repository)
-  * [Create an CommandLineRunner](#create-an-commandlinerunner)
+  * [Create a CommandLineRunner](#create-a-commandlinerunner)
   * [Save and read an entity](#save-and-read-an-entity)
   * [Run the demo](#run-the-demo)
   * [Update an entity](#update-an-entity)
@@ -109,7 +109,7 @@ public class DemoApplication {
 }
 ```
 
-## Create an Configuration class
+## Create a Configuration class
 
 We also need a configuration class to setup everything to connect to our ArangoDB instance and to declare that all needed Spring Beans are processed by the Spring container.
 
@@ -210,7 +210,7 @@ public interface CharacterRepository extends ArangoRepository<Character> {
 }
 ```
 
-## Create an CommandLineRunner
+## Create a CommandLineRunner
 
 To run our demo with Spring Boot we have to create a class implementing `CommandLineRunner`. In this class we can use the `@Authowired` annotation to inject our `CharacterRepository` - we created one step earlier - and also `ArangoOperations` which offers a central support for interactions with the database over a rich feature set. It mostly offers the features from the [ArangoDB Java driver](https://github.com/arangodb/arangodb-java-driver) with additional exception translation.
 
@@ -911,7 +911,7 @@ Iterable<Character> findByChildsName(String name);
 Iterable<Character> findByChildsAgeBetween(int lowerBound, int upperBound);
 ```
 
-Now we add a method that calls in `RelationsRunnter` and search for all parents of 'Sansa' and all parents which have a child between 16 and 20 years old.
+Now we add a method that calls in `RelationsRunner` and search for all parents of 'Sansa' and all parents which have a child between 16 and 20 years old.
 
 ``` java
 System.out.println("## These are the parents of 'Sansa'");
