@@ -63,32 +63,32 @@ public class CrudRunner implements CommandLineRunner {
 		System.out.println(String.format("Ned Stark saved in the database with id: '%s'", nedStark.getId()));
 
 		// lets take a look whether we can find Ned Stark in the database
-		final Character foundNed = repository.findOne(nedStark.getId());
+		final Character foundNed = repository.findById(nedStark.getId()).get();
 		System.out.println(String.format("Found %s", foundNed));
 
 		// as everyone probably knows Ned Stark died in the first season.
 		// So we have to update his 'alive' flag
 		nedStark.setAlive(false);
 		repository.save(nedStark);
-		final Character deadNed = repository.findOne(nedStark.getId());
+		final Character deadNed = repository.findById(nedStark.getId()).get();
 		System.out.println(String.format("Ned Stark after 'alive' flag was updated: %s", deadNed));
 
 		// lets save some additional characters
 		final Collection<Character> createCharacters = createCharacters();
 		System.out.println(String.format("Save %s additional characters", createCharacters.size()));
-		repository.save(createCharacters);
+		repository.saveAll(createCharacters);
 
 		final Iterable<Character> all = repository.findAll();
 		final long count = StreamSupport.stream(Spliterators.spliteratorUnknownSize(all.iterator(), 0), false).count();
 		System.out.println(String.format("A total of %s characters are persisted in the database", count));
 
 		System.out.println("## Return all characters sorted by name");
-		final Iterable<Character> allSorted = repository.findAll(new Sort(new Sort.Order(Sort.Direction.ASC, "name")));
+		final Iterable<Character> allSorted = repository.findAll(new Sort(Sort.Direction.ASC, "name"));
 		allSorted.forEach(System.out::println);
 
 		System.out.println("## Return the first 5 characters sorted by name");
 		final Page<Character> first5Sorted = repository
-				.findAll(new PageRequest(0, 5, new Sort(new Sort.Order(Sort.Direction.ASC, "name"))));
+				.findAll(PageRequest.of(0, 5, new Sort(Sort.Direction.ASC, "name")));
 		first5Sorted.forEach(System.out::println);
 	}
 

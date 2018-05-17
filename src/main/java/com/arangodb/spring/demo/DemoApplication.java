@@ -38,7 +38,7 @@ import com.arangodb.spring.demo.runner.RelationsRunner;
 public class DemoApplication {
 
 	public static void main(final String... args) {
-		final Object[] runner = new Object[] { CrudRunner.class, ByExampleRunner.class, DerivedQueryRunner.class,
+		final Class<?>[] runner = new Class<?>[] { CrudRunner.class, ByExampleRunner.class, DerivedQueryRunner.class,
 				RelationsRunner.class, AQLRunner.class, GeospatialRunner.class };
 		System.exit(SpringApplication.exit(SpringApplication.run(runner, args)));
 	}

@@ -46,22 +46,22 @@ public class RelationsRunner implements CommandLineRunner {
 	@Override
 	public void run(final String... args) throws Exception {
 		System.out.println("# Relations");
-		characterRepo.save(CrudRunner.createCharacters());
+		characterRepo.saveAll(CrudRunner.createCharacters());
 
 		// first create some relations for the Starks and Lannisters
 		characterRepo.findByNameAndSurname("Ned", "Stark").ifPresent(ned -> {
 			characterRepo.findByNameAndSurname("Catelyn", "Stark").ifPresent(catelyn -> {
 				characterRepo.findByNameAndSurname("Robb", "Stark").ifPresent(robb -> {
-					childOfRepo.save(Arrays.asList(new ChildOf(robb, ned), new ChildOf(robb, catelyn)));
+					childOfRepo.saveAll(Arrays.asList(new ChildOf(robb, ned), new ChildOf(robb, catelyn)));
 				});
 				characterRepo.findByNameAndSurname("Sansa", "Stark").ifPresent(sansa -> {
-					childOfRepo.save(Arrays.asList(new ChildOf(sansa, ned), new ChildOf(sansa, catelyn)));
+					childOfRepo.saveAll(Arrays.asList(new ChildOf(sansa, ned), new ChildOf(sansa, catelyn)));
 				});
 				characterRepo.findByNameAndSurname("Arya", "Stark").ifPresent(arya -> {
-					childOfRepo.save(Arrays.asList(new ChildOf(arya, ned), new ChildOf(arya, catelyn)));
+					childOfRepo.saveAll(Arrays.asList(new ChildOf(arya, ned), new ChildOf(arya, catelyn)));
 				});
 				characterRepo.findByNameAndSurname("Bran", "Stark").ifPresent(bran -> {
-					childOfRepo.save(Arrays.asList(new ChildOf(bran, ned), new ChildOf(bran, catelyn)));
+					childOfRepo.saveAll(Arrays.asList(new ChildOf(bran, ned), new ChildOf(bran, catelyn)));
 				});
 			});
 			characterRepo.findByNameAndSurname("Jon", "Snow")
@@ -74,7 +74,7 @@ public class RelationsRunner implements CommandLineRunner {
 				characterRepo.findByNameAndSurname("Cersei", "Lannister").ifPresent(cersei -> {
 					childOfRepo.save(new ChildOf(cersei, tywin));
 					characterRepo.findByNameAndSurname("Joffrey", "Baratheon").ifPresent(joffrey -> {
-						childOfRepo.save(Arrays.asList(new ChildOf(joffrey, jaime), new ChildOf(joffrey, cersei)));
+						childOfRepo.saveAll(Arrays.asList(new ChildOf(joffrey, jaime), new ChildOf(joffrey, cersei)));
 					});
 				});
 			});

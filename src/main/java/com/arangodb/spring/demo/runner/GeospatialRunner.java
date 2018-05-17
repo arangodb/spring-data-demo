@@ -26,6 +26,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Range;
+import org.springframework.data.domain.Range.Bound;
 import org.springframework.data.geo.Distance;
 import org.springframework.data.geo.GeoPage;
 import org.springframework.data.geo.GeoResults;
@@ -49,7 +50,7 @@ public class GeospatialRunner implements CommandLineRunner {
 	public void run(final String... args) throws Exception {
 		System.out.println("# Geospacial");
 
-		repository.save(Arrays.asList(new Location("Dragonstone", new double[] { 55.167801, -6.815096 }),
+		repository.saveAll(Arrays.asList(new Location("Dragonstone", new double[] { 55.167801, -6.815096 }),
 			new Location("King's Landing", new double[] { 42.639752, 18.110189 }),
 			new Location("The Red Keep", new double[] { 35.896447, 14.446442 }),
 			new Location("Yunkai", new double[] { 31.046642, -7.129532 }),
@@ -60,12 +61,12 @@ public class GeospatialRunner implements CommandLineRunner {
 
 		System.out.println("## Find the first 5 locations near 'Winterfell'");
 		final GeoPage<Location> first5 = repository.findByLocationNear(new Point(-5.581312, 54.368321),
-			new PageRequest(0, 5));
+			PageRequest.of(0, 5));
 		first5.forEach(System.out::println);
 
 		System.out.println("## Find the next 5 locations near 'Winterfell' (only 3 locations left)");
 		final GeoPage<Location> next5 = repository.findByLocationNear(new Point(-5.581312, 54.368321),
-			new PageRequest(1, 5));
+			PageRequest.of(1, 5));
 		next5.forEach(System.out::println);
 
 		System.out.println("## Find all locations within 50 kilometers of 'Winterfell'");
@@ -75,7 +76,7 @@ public class GeospatialRunner implements CommandLineRunner {
 
 		System.out.println("## Find all locations which are 40 to 50 kilometers away from 'Winterfell'");
 		final Iterable<Location> findByLocationWithin = repository.findByLocationWithin(new Point(-5.581312, 54.368321),
-			new Range<>(40000., 50000.));
+			Range.of(Bound.inclusive(40000.), Bound.inclusive(50000.)));
 		findByLocationWithin.forEach(System.out::println);
 
 		System.out.println("## Find all locations within a given polygon");
