@@ -26,10 +26,11 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
+import org.springframework.data.repository.query.Param;
+
 import com.arangodb.ArangoCursor;
 import com.arangodb.spring.demo.entity.Character;
 import com.arangodb.springframework.annotation.BindVars;
-import com.arangodb.springframework.annotation.Param;
 import com.arangodb.springframework.annotation.Query;
 import com.arangodb.springframework.annotation.QueryOptions;
 import com.arangodb.springframework.repository.ArangoRepository;
