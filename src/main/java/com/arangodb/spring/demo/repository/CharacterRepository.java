@@ -39,7 +39,7 @@ import com.arangodb.springframework.repository.ArangoRepository;
  * @author Mark Vollmary
  *
  */
-public interface CharacterRepository extends ArangoRepository<Character> {
+public interface CharacterRepository extends ArangoRepository<Character, String> {
 
 	Iterable<Character> findBySurname(String surname);
 

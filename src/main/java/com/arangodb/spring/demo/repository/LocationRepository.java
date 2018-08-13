@@ -35,7 +35,7 @@ import com.arangodb.springframework.repository.ArangoRepository;
  * @author Mark Vollmary
  *
  */
-public interface LocationRepository extends ArangoRepository<Location> {
+public interface LocationRepository extends ArangoRepository<Location, String> {
 
 	GeoPage<Location> findByLocationNear(Point location, Pageable pageable);
 
