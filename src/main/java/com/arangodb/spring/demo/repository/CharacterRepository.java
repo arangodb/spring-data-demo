@@ -61,8 +61,8 @@ public interface CharacterRepository extends ArangoRepository<Character, String>
 
 	Iterable<Character> findByChildsAgeBetween(int lowerBound, int upperBound);
 
-	@Query("FOR c IN characters FILTER c.age > @0 SORT c.age DESC RETURN c")
-	Iterable<Character> getOlderThan(int value);
+	@Query("FOR c IN characters FILTER c.age > @age SORT c.age DESC RETURN c")
+	Iterable<Character> getOlderThan(@Param("age") int value);
 
 	@Query("FOR c IN characters FILTER c.surname == @surname SORT c.age ASC RETURN c")
 	Iterable<Character> getWithSurname(@Param("surname") String value);
