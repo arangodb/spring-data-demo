@@ -63,7 +63,7 @@ public class AQLRunner implements CommandLineRunner {
 
 		System.out.println("## Find all childs and grantchilds of 'Tywin Lannister' (sort by age descending)");
 		repository.findByNameAndSurname("Tywin", "Lannister").ifPresent(tywin -> {
-			final Set<Character> childs = repository.getAllChildsAndGrandchilds(tywin.getId(), ChildOf.class);
+			final Set<Character> childs = repository.getAllChildsAndGrandchilds("characters/" + tywin.getId(), ChildOf.class);
 			childs.forEach(System.out::println);
 		});
 	}
