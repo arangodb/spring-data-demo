@@ -558,7 +558,7 @@ public interface CharacterRepository extends ArangoRepository<Character> {
 After we extended our repository we create a new `CommandLineRunner` and add it to our `DemoApplication`.
 
 ``` java
-Object[] runner = new Object[] { CrudRunner.class, ByExampleRunner.class, DerivedMethodRunner.class };
+Object[] runner = new Object[] { CrudRunner.class, ByExampleRunner.class, DerivedQueryRunner.class };
 ```
 
 In the `run()` method we call our new method `findBySurname(String)` and try to find all characters with the `surname` 'Lannister'.
@@ -615,7 +615,7 @@ List<Character> findBySurnameEndsWithAndAgeBetweenAndNameInAllIgnoreCase(
   String[] nameList);
 ```
 
-And the method calls in `DerivedMethodRunner`.
+And the method calls in `DerivedQueryRunner`.
 
 ``` java
 System.out.println("## Find top 2 Lannnisters ordered by age");
@@ -652,7 +652,7 @@ For this example we add the method `findByNameAndSurname(String, String)` in `Ch
 Character findByNameAndSurname(String name, String surname);
 ```
 
-When we add the method call in `DerivedMethodRunner` we should take care of `null` as a possible return value.
+When we add the method call in `DerivedQueryRunner` we should take care of `null` as a possible return value.
 
 ``` java
 System.out.println("## Find a single character by name & surname");
@@ -670,7 +670,7 @@ At this point it is possible and recommended to use `Optional<T>` which was intr
 Optional<Character> findByNameAndSurname(String name, String surname);
 ```
 
-`DerivedMethodRunner`:
+`DerivedQueryRunner`:
 
 ``` java
 System.out.println("## Find a single character by name & surname");
@@ -699,7 +699,7 @@ With the following lines of code we are able to only count characters which are 
 Integer countByAliveTrue();
 ```
 
-`DerivedMethodRunner`:
+`DerivedQueryRunner`:
 
 ``` java
 System.out.println("## Count how many characters are still alive");
@@ -807,7 +807,7 @@ public interface ChildOfRepository extends ArangoRepository<ChildOf> {
 Now we implement another `CommandLineRunner` called `RelationsRunner` and add it to our `DemoApplication` like we did with all the runners before.
 
 ``` java
-Object[] runner = new Object[] { CrudRunner.class, ByExampleRunner.class, DerivedMethodRunner.class, RelationsRunner.class };
+Object[] runner = new Object[] { CrudRunner.class, ByExampleRunner.class, DerivedQueryRunner.class, RelationsRunner.class };
 ```
 
 In the newly created `RelationsRunner` we inject `CharacterRepository` and `ChildOfRepository` and built our relations. First we have to save some characters because we removed most of them within the previous chapter of this demo. To do so we use the static `createCharacter()` method from our `CrudRunner`. After we have successfully persisted our characters we want to save some relationships with our edge entity `ChildOf`. Because `ChildOf` requires instances of `Character` with `id` field set from the database we first have to find them in our `CharacterRepository`. To ensure we find the correct `Character` we use the derived query method `findByNameAndSurename(String, String)` which gives us one specific `Character`. Then we create instances of `ChildOf` and save them through `ChildOfRepository`.
