@@ -83,12 +83,12 @@ public class CrudRunner implements CommandLineRunner {
 		System.out.println(String.format("A total of %s characters are persisted in the database", count));
 
 		System.out.println("## Return all characters sorted by name");
-		final Iterable<Character> allSorted = repository.findAll(new Sort(Sort.Direction.ASC, "name"));
+		final Iterable<Character> allSorted = repository.findAll(Sort.by(Sort.Direction.ASC, "name"));
 		allSorted.forEach(System.out::println);
 
 		System.out.println("## Return the first 5 characters sorted by name");
 		final Page<Character> first5Sorted = repository
-				.findAll(PageRequest.of(0, 5, new Sort(Sort.Direction.ASC, "name")));
+				.findAll(PageRequest.of(0, 5, Sort.by(Sort.Direction.ASC, "name")));
 		first5Sorted.forEach(System.out::println);
 	}
 
