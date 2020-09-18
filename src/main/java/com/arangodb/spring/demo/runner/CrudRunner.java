@@ -43,6 +43,8 @@ import com.arangodb.springframework.core.ArangoOperations;
 @ComponentScan("com.arangodb.spring.demo")
 public class CrudRunner implements CommandLineRunner {
 
+	static final Collection<Character> characters = createCharacters();
+
 	@Autowired
 	private ArangoOperations operations;
 	@Autowired
@@ -57,7 +59,9 @@ public class CrudRunner implements CommandLineRunner {
 
 		// save a single entity in the database
 		// there is no need of creating the collection first. This happen automatically
-		final Character nedStark = new Character("Ned", "Stark", true, 41);
+		final Character nedStark = characters.stream()
+				.filter(it-> "Ned".equals(it.getName()) && "Stark".equals(it.getSurname()))
+				.findFirst().orElseThrow();
 		repository.save(nedStark);
 		// the generated id from the database is set in the original entity
 		System.out.println(String.format("Ned Stark saved in the database with id: '%s'", nedStark.getId()));
@@ -74,9 +78,8 @@ public class CrudRunner implements CommandLineRunner {
 		System.out.println(String.format("Ned Stark after 'alive' flag was updated: %s", deadNed));
 
 		// lets save some additional characters
-		final Collection<Character> createCharacters = createCharacters();
-		System.out.println(String.format("Save %s additional characters", createCharacters.size()));
-		repository.saveAll(createCharacters);
+		System.out.println(String.format("Save %s additional characters", characters.size()));
+		repository.saveAll(characters);
 
 		final Iterable<Character> all = repository.findAll();
 		final long count = StreamSupport.stream(Spliterators.spliteratorUnknownSize(all.iterator(), 0), false).count();
@@ -93,7 +96,7 @@ public class CrudRunner implements CommandLineRunner {
 	}
 
 	public static Collection<Character> createCharacters() {
-		return Arrays.asList(new Character("Ned", "Stark", false, 41), new Character("Robert", "Baratheon", false),
+		return Arrays.asList(new Character("Ned", "Stark", true, 41), new Character("Robert", "Baratheon", false),
 			new Character("Jaime", "Lannister", true, 36), new Character("Catelyn", "Stark", false, 40),
 			new Character("Cersei", "Lannister", true, 36), new Character("Daenerys", "Targaryen", true, 16),
 			new Character("Jorah", "Mormont", false), new Character("Petyr", "Baelish", false),

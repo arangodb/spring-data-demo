@@ -46,7 +46,7 @@ public class RelationsRunner implements CommandLineRunner {
 	@Override
 	public void run(final String... args) throws Exception {
 		System.out.println("# Relations");
-		characterRepo.saveAll(CrudRunner.createCharacters());
+		characterRepo.saveAll(CrudRunner.characters);
 
 		// first create some relations for the Starks and Lannisters
 		characterRepo.findByNameAndSurname("Ned", "Stark").ifPresent(ned -> {
