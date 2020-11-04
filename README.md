@@ -65,12 +65,12 @@ We have to create a maven pom.xml:
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.5.6.RELEASE</version>
+    <version>2.3.3.RELEASE</version>
   </parent>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <java.version>1.8</java.version>
+    <java.version>11</java.version>
   </properties>
 
   <dependencies>
@@ -78,10 +78,10 @@ We have to create a maven pom.xml:
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
     </dependency>
-    <dependency>
-      <groupId>com.arangodb</groupId>
-      <artifactId>arangodb-spring-data</artifactId>
-      <version>1.0.0</version>
+  <dependency>
+    <groupId>com.arangodb</groupId>
+      <artifactId>arangodb-spring-boot-starter</artifactId>
+      <version>${project.parent.version}</version>
     </dependency>
   </dependencies>
 
