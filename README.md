@@ -1,4 +1,4 @@
-![ArangoDB-Logo](https://docs.arangodb.com/assets/arangodb_logo_2016_inverted.png)
+![ArangoDB-Logo](https://www.arangodb.com/docs/assets/arangodb_logo_2016_inverted.png)
 
 # Spring Data ArangoDB - Demo
 
@@ -937,9 +937,9 @@ Character [id=characters/273656, name=Cersei, surname=Lannister, alive=true, age
 
 # Query methods
 
-When it comes to more complex use cases where a derived method would get way too long and become unreadable, queries using [ArangoDB Query Language (AQL)](https://docs.arangodb.com/3.2/AQL/) can be supplied with the `@Query` annotation on methods in our repositories.
+When it comes to more complex use cases where a derived method would get way too long and become unreadable, queries using [ArangoDB Query Language (AQL)](https://www.arangodb.com/docs/stable/aql/) can be supplied with the `@Query` annotation on methods in our repositories.
 
-AQL supports the usage of [bind parameters](https://docs.arangodb.com/current/AQL/Fundamentals/BindParameters.html), thus allowing to separate the query text from literal values used in the query. There are three ways of passing bind parameters to the query in the `@Query` annotation.
+AQL supports the usage of [bind parameters](https://www.arangodb.com/docs/stable/aql/fundamentals-bind-parameters.html), thus allowing to separate the query text from literal values used in the query. There are three ways of passing bind parameters to the query in the `@Query` annotation.
 
 ## Number matching
 
@@ -1099,7 +1099,7 @@ Character [id=characters/273656, name=Cersei, surname=Lannister, alive=true, age
 
 ## Graph traversal
 
-Lets finish the query method topic of our demo with a [graph traversal](https://docs.arangodb.com/current/AQL/Graphs/Traversals.html) written in AQL where our edge `ChildOf` is involved.
+Lets finish the query method topic of our demo with a [graph traversal](https://www.arangodb.com/docs/stable/aql/graphs-traversals.html) written in AQL where our edge `ChildOf` is involved.
 
 The following query searches for every `Character` connected (through `ChildOf`) with the character to whom the passed `id` belongs to. This time we specified the edge collection within the query which we pass as a bind parameter with the `@Param` annotation.
 
