@@ -25,7 +25,6 @@ import com.arangodb.springframework.repository.ArangoRepository;
 
 /**
  * @author Mark Vollmary
- *
  */
 public interface ChildOfRepository extends ArangoRepository<ChildOf, String> {
 

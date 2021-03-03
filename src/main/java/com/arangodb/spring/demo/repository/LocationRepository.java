@@ -20,6 +20,8 @@
 
 package com.arangodb.spring.demo.repository;
 
+import com.arangodb.spring.demo.entity.Location;
+import com.arangodb.springframework.repository.ArangoRepository;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Range;
 import org.springframework.data.geo.Distance;
@@ -28,21 +30,16 @@ import org.springframework.data.geo.GeoResults;
 import org.springframework.data.geo.Point;
 import org.springframework.data.geo.Polygon;
 
-import com.arangodb.spring.demo.entity.Location;
-import com.arangodb.springframework.repository.ArangoRepository;
-
 /**
  * @author Mark Vollmary
- *
  */
 public interface LocationRepository extends ArangoRepository<Location, String> {
 
-	GeoPage<Location> findByLocationNear(Point location, Pageable pageable);
+    GeoPage<Location> findByLocationNear(Point location, Pageable pageable);
 
-	GeoResults<Location> findByLocationWithin(Point location, Distance distance);
+    GeoResults<Location> findByLocationWithin(Point location, Distance distance);
 
-	Iterable<Location> findByLocationWithin(Point location, Range<Double> distanceRange);
+    Iterable<Location> findByLocationWithin(Point location, Range<Double> distanceRange);
 
-	Iterable<Location> findByLocationWithin(Polygon polygon);
-
+    Iterable<Location> findByLocationWithin(Polygon polygon);
 }

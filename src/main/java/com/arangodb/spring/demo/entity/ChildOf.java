@@ -20,61 +20,59 @@
 
 package com.arangodb.spring.demo.entity;
 
-import org.springframework.data.annotation.Id;
-
 import com.arangodb.springframework.annotation.Edge;
 import com.arangodb.springframework.annotation.From;
 import com.arangodb.springframework.annotation.To;
+import org.springframework.data.annotation.Id;
 
 /**
  * @author Mark Vollmary
- *
  */
 @Edge
 public class ChildOf {
 
-	@Id
-	private String id;
+    @Id
+    private String id;
 
-	@From
-	private Character child;
+    @From
+    private Character child;
 
-	@To
-	private Character parent;
+    @To
+    private Character parent;
 
-	public ChildOf(final Character child, final Character parent) {
-		super();
-		this.child = child;
-		this.parent = parent;
-	}
+    public ChildOf(final Character child, final Character parent) {
+        super();
+        this.child = child;
+        this.parent = parent;
+    }
 
-	public String getId() {
-		return id;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public void setId(final String id) {
-		this.id = id;
-	}
+    public void setId(final String id) {
+        this.id = id;
+    }
 
-	public Character getChild() {
-		return child;
-	}
+    public Character getChild() {
+        return child;
+    }
 
-	public void setChild(final Character child) {
-		this.child = child;
-	}
+    public void setChild(final Character child) {
+        this.child = child;
+    }
 
-	public Character getParent() {
-		return parent;
-	}
+    public Character getParent() {
+        return parent;
+    }
 
-	public void setParent(final Character parent) {
-		this.parent = parent;
-	}
+    public void setParent(final Character parent) {
+        this.parent = parent;
+    }
 
-	@Override
-	public String toString() {
-		return "ChildOf [id=" + id + ", child=" + child + ", parent=" + parent + "]";
-	}
+    @Override
+    public String toString() {
+        return "ChildOf [id=" + id + ", child=" + child + ", parent=" + parent + "]";
+    }
 
 }
