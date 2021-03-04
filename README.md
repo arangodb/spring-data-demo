@@ -24,7 +24,8 @@ This is an extensive demo on how to use [Spring Data ArangoDB](https://github.co
   * [Multiple entities](#multiple-entities)
 * [Derived queries](#derived-queries)
   * [Simple findBy](#simple-findby)
-  * [More complexe findBy](#more-complexe-findby)
+  * [Create an index](#create-an-index)
+  * [More complex findBy](#more-complex-findby)
   * [Single entity result](#single-entity-result)
   * [countBy](#countby)
   * [removeBy](#removeby)
@@ -668,7 +669,7 @@ public class Character {
 
 Next time we run our demo the related queries will benefit from the index and avoid performing a full collection scan.
 
-## More complexe findBy
+## More complex findBy
 
 Now we’re creating some methods with more parts and have a look how they fit together. Lets also use some different
 return types. Again we simply add the methods in our `CharacterRepository`.
