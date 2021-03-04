@@ -20,27 +20,29 @@
 
 package com.arangodb.spring.demo;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 import com.arangodb.spring.demo.runner.AQLRunner;
 import com.arangodb.spring.demo.runner.ByExampleRunner;
 import com.arangodb.spring.demo.runner.CrudRunner;
 import com.arangodb.spring.demo.runner.DerivedQueryRunner;
 import com.arangodb.spring.demo.runner.GeospatialRunner;
 import com.arangodb.spring.demo.runner.RelationsRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @author Mark Vollmary
- *
  */
 @SpringBootApplication
 public class DemoApplication {
-
-	public static void main(final String... args) {
-		final Class<?>[] runner = new Class<?>[] { CrudRunner.class, ByExampleRunner.class, DerivedQueryRunner.class,
-				RelationsRunner.class, AQLRunner.class, GeospatialRunner.class };
-		System.exit(SpringApplication.exit(SpringApplication.run(runner, args)));
-	}
-
+    public static void main(final String... args) {
+        final Class<?>[] runner = new Class<?>[]{
+                CrudRunner.class,
+                ByExampleRunner.class,
+                DerivedQueryRunner.class,
+                RelationsRunner.class,
+                AQLRunner.class,
+                GeospatialRunner.class
+        };
+        System.exit(SpringApplication.exit(SpringApplication.run(runner, args)));
+    }
 }
