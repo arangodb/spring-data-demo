@@ -47,14 +47,16 @@ public class GeospatialRunner implements CommandLineRunner {
     public void run(final String... args) throws Exception {
         System.out.println("# Geospatial");
 
-        repository.saveAll(Arrays.asList(new Location("Dragonstone", new double[]{55.167801, -6.815096}),
-                new Location("King's Landing", new double[]{42.639752, 18.110189}),
-                new Location("The Red Keep", new double[]{35.896447, 14.446442}),
-                new Location("Yunkai", new double[]{31.046642, -7.129532}),
-                new Location("Astapor", new double[]{31.50974, -9.774249}),
-                new Location("Winterfell", new double[]{54.368321, -5.581312}),
-                new Location("Vaes Dothrak", new double[]{54.16776, -6.096125}),
-                new Location("Beyond the wall", new double[]{64.265473, -21.094093})));
+        repository.saveAll(Arrays.asList(
+                new Location("Dragonstone", new Point(55.167801, -6.815096)),
+                new Location("King's Landing",  new Point(42.639752, 18.110189)),
+                new Location("The Red Keep",    new Point(35.896447, 14.446442)),
+                new Location("Yunkai",          new Point(31.046642, -7.129532)),
+                new Location("Astapor",         new Point(31.50974, -9.774249)),
+                new Location("Winterfell",      new Point(54.368321, -5.581312)),
+                new Location("Vaes Dothrak",    new Point(54.16776, -6.096125)),
+                new Location("Beyond the wall", new Point(64.265473, -21.094093))
+        ));
 
         System.out.println("## Find the first 5 locations near 'Winterfell'");
         GeoPage<Location> first5 = repository.findByLocationNear(new Point(-5.581312, 54.368321),

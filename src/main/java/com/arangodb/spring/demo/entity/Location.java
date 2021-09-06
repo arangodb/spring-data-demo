@@ -23,8 +23,7 @@ package com.arangodb.spring.demo.entity;
 import com.arangodb.springframework.annotation.Document;
 import com.arangodb.springframework.annotation.GeoIndexed;
 import org.springframework.data.annotation.Id;
-
-import java.util.Arrays;
+import org.springframework.data.geo.Point;
 
 /**
  * @author Mark Vollmary
@@ -32,13 +31,15 @@ import java.util.Arrays;
 @Document("locations")
 public class Location {
 
-    private final String name;
-    @GeoIndexed
-    private final double[] location;
     @Id
     private String id;
 
-    public Location(final String name, final double[] location) {
+    private final String name;
+
+    @GeoIndexed
+    private final Point location;
+
+    public Location(final String name, final Point location) {
         super();
         this.name = name;
         this.location = location;
@@ -56,13 +57,16 @@ public class Location {
         return name;
     }
 
-    public double[] getLocation() {
+    public Point getLocation() {
         return location;
     }
 
     @Override
     public String toString() {
-        return "Location [id=" + id + ", name=" + name + ", location=" + Arrays.toString(location) + "]";
+        return "Location{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", location=" + location +
+                '}';
     }
-
 }
