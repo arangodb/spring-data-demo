@@ -36,7 +36,7 @@ public class Location {
 
     private final String name;
 
-    @GeoIndexed
+    @GeoIndexed(geoJson = true)
     private final Point location;
 
     public Location(final String name, final Point location) {
