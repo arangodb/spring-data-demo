@@ -1334,14 +1334,14 @@ public class GeospatialRunner implements CommandLineRunner {
         System.out.println("# Geospatial");
 
         repository.saveAll(Arrays.asList(
-                new Location("Dragonstone", new Point(55.167801, -6.815096)),
-                new Location("King's Landing", new Point(42.639752, 18.110189)),
-                new Location("The Red Keep", new Point(35.896447, 14.446442)),
-                new Location("Yunkai", new Point(31.046642, -7.129532)),
-                new Location("Astapor", new Point(31.50974, -9.774249)),
-                new Location("Winterfell", new Point(54.368321, -5.581312)),
-                new Location("Vaes Dothrak", new Point(54.16776, -6.096125)),
-                new Location("Beyond the wall", new Point(64.265473, -21.094093))
+                new Location("Dragonstone",     new Point(-6.815096, 55.167801)),
+                new Location("King's Landing",  new Point(18.110189, 42.639752)),
+                new Location("The Red Keep",    new Point(14.446442, 35.896447)),
+                new Location("Yunkai",          new Point(-7.129532, 31.046642)),
+                new Location("Astapor",         new Point(-9.774249, 31.50974)),
+                new Location("Winterfell",      new Point(-5.581312, 54.368321)),
+                new Location("Vaes Dothrak",    new Point(-6.096125, 54.16776)),
+                new Location("Beyond the wall", new Point(-21.094093, 64.265473))
         ));
     }
 }
