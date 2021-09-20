@@ -1275,6 +1275,7 @@ package com.arangodb.spring.demo.entity;
 import com.arangodb.springframework.annotation.Document;
 import com.arangodb.springframework.annotation.GeoIndexed;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.geo.Point;
 
 import java.util.Arrays;
 
