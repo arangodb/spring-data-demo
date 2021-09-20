@@ -1296,6 +1296,15 @@ public class Location {
 
     // getter & setter
 
+    @Override
+    public String toString() {
+      return "Location{" +
+              "id='" + id + '\'' +
+              ", name='" + name + '\'' +
+              ", location=" + location +
+              '}';
+    }
+
 }
 ```
 
