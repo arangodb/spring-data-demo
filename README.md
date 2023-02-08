@@ -62,7 +62,7 @@ We have to create a maven `pom.xml`:
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.3</version>
+        <version>2.7.8</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -81,7 +81,7 @@ We have to create a maven `pom.xml`:
         <dependency>
             <groupId>com.arangodb</groupId>
             <artifactId>arangodb-spring-boot-starter</artifactId>
-            <version>2.3.3.RELEASE</version>
+            <version>2.7-0</version>
         </dependency>
     </dependencies>
 
