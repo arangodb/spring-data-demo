@@ -85,7 +85,7 @@ We have to create a maven `pom.xml`:
         <dependency>
             <groupId>com.arangodb</groupId>
             <artifactId>arangodb-spring-boot-starter</artifactId>
-            <version>3.1-0-SNAPSHOT</version>
+            <version>3.1-0</version>
         </dependency>
     </dependencies>
 
