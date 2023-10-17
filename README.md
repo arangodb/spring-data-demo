@@ -554,13 +554,13 @@ System.out.println("## Find all Starks which are 30 years younger than Ned Stark
 Iterable<Character> allYoungerStarks = repository.findAll(
     Example.of(foundNedStark.get(), ExampleMatcher.matchingAll()
         .withMatcher("surname", GenericPropertyMatcher::exact)
-        .withIgnorePaths("id", "name", "alive")
+        .withIgnorePaths("id", "arangoId", "name", "alive")
         .withTransformer("age", age -> age.map(it -> (int) it - 30))));
         allYoungerStarks.forEach(System.out::println);
 ```
 
-Because we are using the entity `foundNedStark` – fetched from the database – we have to ignore the field `id` which
-isn’t null in this case.
+Because we are using the entity `foundNedStark` – fetched from the database – we have to ignore the fields `id`, 
+`arangoId` which are not null in this case.
 
 The console output should only include Arya Stark.
 
