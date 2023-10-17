@@ -1085,11 +1085,9 @@ public class AQLRunner implements CommandLineRunner {
     @Override
     public void run(final String... args) throws Exception {
         System.out.println("# AQL queries");
-
-        System.out.println("## Find all characters which are older than 21 (sort descending)");
-        final Iterable<Character> older = repository.getOlderThan(21);
-        older.forEach(System.out::println);
-
+        System.out.println("## Find all characters with surname 'Lannister' (sort by age ascending)");
+        Iterable<Character> lannisters = repository.getWithSurname("Lannister");
+        lannisters.forEach(System.out::println);
     }
 
 }
@@ -1105,14 +1103,6 @@ Class<?>[]runner=new Class<?>[]{
         RelationsRunner.class,
         AQLRunner.class
 };
-```
-
-Add the following lines to AQLRunner.
-
-```java
-System.out.println("## Find all characters with surname 'Lannister' (sort by age ascending)");
-Iterable<Character> lannisters = repository.getWithSurname("Lannister");
-lannisters.forEach(System.out::println);
 ```
 
 The console output should give you all characters with `surname` Lannister.
