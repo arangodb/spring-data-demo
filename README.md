@@ -1,4 +1,8 @@
-![ArangoDB-Logo](https://www.arangodb.com/docs/assets/arangodb_logo_2016_inverted.png)
+# [DEPRECATED] Spring Data ArangoDB - Demo
+
+**This project has been moved under the [ArangoDB Spring Boot Starter](https://github.com/arangodb/spring-boot-starter/tree/main/demo) project.**
+
+---
 
 # Spring Data ArangoDB - Demo
 
