@@ -61,7 +61,7 @@ public class ByExampleRunner implements CommandLineRunner {
         Iterable<Character> allYoungerStarks = repository.findAll(
                 Example.of(foundNedStark.get(), ExampleMatcher.matchingAll()
                         .withMatcher("surname", GenericPropertyMatcher::exact)
-                        .withIgnorePaths("id", "name", "alive")
+                        .withIgnorePaths("id", "arangoId", "name", "alive")
                         .withTransformer("age", age -> age.map(it -> (int) it - 30))));
         allYoungerStarks.forEach(System.out::println);
 
